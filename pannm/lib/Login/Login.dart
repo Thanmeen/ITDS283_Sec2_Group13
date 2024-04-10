@@ -1,11 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
-import '../Form/TextForm.dart';
+import '../ClassForm/TextForm.dart';
 import 'LoginButton.dart';
 import 'icon_button.dart';
 import 'checkbox_button.dart';
-import '../app_routes.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import '../ClassRoutes/app_routes.dart';
+import '../ClassImage/image_constant.dart';
+import '../ClassImage/Image_view.dart';
 
 // ignore_for_file: must_be_immutable
 class LoginPageScreen extends StatelessWidget {
@@ -42,8 +43,8 @@ class LoginPageScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(height: 9),
-                    Image(
-                      image: AssetImage('assets/PannmLogo.PNG'),
+                    CustomImageView(
+                      imagePath: ImageConstant.PannmLogo,
                       height: 165,
                       width: 166,
                     ),
@@ -51,10 +52,11 @@ class LoginPageScreen extends StatelessWidget {
                     Text(
                       "We made for your style.",
                       style: TextStyle(
+                        color: Color(0XFF352020),
                         fontSize: 16,
                         fontFamily: 'Ibarra Real Nova',
                         fontWeight: FontWeight.w700,
-                      )
+                      ),
                     ),
                     SizedBox(height: 62),
                     Padding(
@@ -65,10 +67,11 @@ class LoginPageScreen extends StatelessWidget {
                       child: CustomTextFormField(
                         controller: userNameController,
                         hintText: "Username or Email",
-                        textStyle: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'Ibarra Real Nova',
-                          fontWeight: FontWeight.w700,
+                        hintStyle: TextStyle(
+                          color: Color(0XFF000000),
+                          fontSize: 15,
+                          fontFamily: 'High Tower Text',
+                          fontWeight: FontWeight.w400,
                         ),
                         textInputType: TextInputType.emailAddress,
                       ),
@@ -82,21 +85,22 @@ class LoginPageScreen extends StatelessWidget {
                       child: CustomTextFormField(
                         controller: passwordController,
                         hintText: "Password",
-                        textStyle: TextStyle(
-                          fontSize: 16,
-                          fontFamily: 'Ibarra Real Nova',
-                          fontWeight: FontWeight.w700,
+                        hintStyle: TextStyle(
+                          color: Color(0XFF000000),
+                          fontSize: 15,
+                          fontFamily: 'High Tower Text',
+                          fontWeight: FontWeight.w400,
                         ),
                         textInputAction: TextInputAction.done,
                         textInputType: TextInputType.visiblePassword,
                         suffix: Container(
-                        margin: EdgeInsets.fromLTRB(30, 12, 8, 12),
-                        child: SvgPicture.asset(
-                          'assets/images/img_eye.svg',
-                          height: 24,
-                          width: 24,
+                          margin: EdgeInsets.fromLTRB(30, 12, 8, 12),
+                          child: CustomImageView(
+                            imagePath: ImageConstant.imgEye,
+                            height: 24,
+                            width: 24,
+                          ),
                         ),
-                      ),
                         suffixConstraints: BoxConstraints(
                           maxHeight: 48,
                         ),
@@ -130,7 +134,7 @@ class LoginPageScreen extends StatelessWidget {
                         fontFamily: 'High Tower Text',
                         fontWeight: FontWeight.w400,
                       ),
-                    ),  
+                    ),
                     SizedBox(height: 21),
                     Align(
                       alignment: Alignment.centerLeft,
@@ -141,8 +145,8 @@ class LoginPageScreen extends StatelessWidget {
                             CustomIconButton(
                               height: 39,
                               width: 39,
-                              child: Image(
-                                image: AssetImage('/assets/images/facebook_logo.png'),
+                              child: CustomImageView(
+                                imagePath: ImageConstant.imgFacebook,
                               ),
                             ),
                             Padding(
@@ -151,16 +155,8 @@ class LoginPageScreen extends StatelessWidget {
                                 height: 39,
                                 width: 39,
                                 padding: EdgeInsets.all(10),
-                                child : SvgPicture.asset('/assets/images/instagram.svg'),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 18),
-                              child: CustomIconButton(
-                                height: 39,
-                                width: 39,
-                                child: Image(
-                                  image: AssetImage('/assets/images/google_plus.png'),
+                                child: CustomImageView(
+                                  imagePath: ImageConstant.imgInstagram1,
                                 ),
                               ),
                             ),
@@ -169,9 +165,21 @@ class LoginPageScreen extends StatelessWidget {
                               child: CustomIconButton(
                                 height: 39,
                                 width: 39,
-                                child:  SvgPicture.asset('/assets/images/img_link.svg'),
+                                child: CustomImageView(
+                                  imagePath: ImageConstant.imgGooglePlus,
                                 ),
                               ),
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 18),
+                              child: CustomIconButton(
+                                height: 39,
+                                width: 39,
+                                child: CustomImageView(
+                                  imagePath: ImageConstant.imgLink,
+                                ),
+                              ),
+                            )
                           ],
                         ),
                       ),
@@ -196,7 +204,8 @@ class LoginPageScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(bottom: 3),
             child: CustomCheckboxButton(
-              text: "Remember ",
+              textStyle: TextStyle(fontSize: 16),
+              text: "Remember",
               value: remember,
               onChange: (value) {
                 remember = value;
@@ -208,13 +217,13 @@ class LoginPageScreen extends StatelessWidget {
             child: Text(
               "Forget password",
               style: TextStyle(
-              color: Color(0XFF000000),
-              fontSize: 20,
-              fontFamily: 'High Tower Text',
-              fontWeight: FontWeight.w400,
+                color: Color(0XFF000000),
+                fontSize: 15,
+                fontFamily: 'High Tower Text',
+                fontWeight: FontWeight.w400,
               ),
             ),
-          ),
+          )
         ],
       ),
     );
