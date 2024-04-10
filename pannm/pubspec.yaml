@@ -24,6 +24,9 @@ flutter:
   assets: 
     - assets/
     - assets/images/
+    - assets/images/black.jpg
+    - assets/images/jeans.png
+    - assets/images/Tshirt.png
   fonts: 
     - family: Hina Mincho
       fonts: 
