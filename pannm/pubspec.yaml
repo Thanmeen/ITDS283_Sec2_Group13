@@ -27,6 +27,16 @@ flutter:
     - assets/images/black.jpg
     - assets/images/jeans.png
     - assets/images/Tshirt.png
+    - assets/images/blackhood.jpg
+    - assets/images/hawaii.jpg
+    - assets/images/white.png
+    - assets/images/ck.jpg
+    - assets/images/crop.jpg
+    - assets/images/cargo.jpg
+    - assets/images/blue.jpg
+    - assets/images/Red.png
+    - assets/images/whitekid.png
+
   fonts: 
     - family: Hina Mincho
       fonts: 

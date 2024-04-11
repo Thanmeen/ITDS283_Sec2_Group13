@@ -15,12 +15,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: Topdealpage(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
+class Topdealpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -90,12 +90,13 @@ class HomePage extends StatelessWidget {
             Text(
               'Today Special Deal',
               style: TextStyle(
+                fontFamily: 'Hind',
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
               ),
             ),
             Padding(padding: EdgeInsets.all(8)),
-            Expanded(child: ProductListPage(),
+            Expanded(child: ProductTopdealPage(),
             )
             
           ],
@@ -116,7 +117,7 @@ class Product {
   Product({required this.name, required this.imageUrl, required this.price});
 }
 
-class ProductListPage extends StatelessWidget {
+class ProductTopdealPage extends StatelessWidget {
   final List<Product> products = [
     Product(
       name: 'Blue Shirt',
