@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Login/Login.dart';
+import '../HomePage/HomePage.dart';
 
 class AppRoutes {
   static const String cartPageScreen = '/cart_page_screen';
@@ -14,7 +15,7 @@ class AppRoutes {
 
   static Map<String, WidgetBuilder> routes = {
     //cartPageScreen: (context) => CartPageScreen(),
-    //homePageScreen: (context) => HomePageScreen(),
+    homePageScreen: (context) => HomePageScreen(),
     //checkoutOneScreen: (context) => CheckoutOneScreen(),
     loginPageScreen: (context) => LoginPageScreen(),
     //appNavigationScreen: (context) => AppNavigationScreen()

@@ -55,7 +55,7 @@ class CustomCheckboxButton extends StatelessWidget {
 
   Widget get buildCheckBoxWidget => InkWell(
         onTap: () {
-          value = !(value!);
+          value =!(value!);
           onChange(value!);
         },
         child: Container(

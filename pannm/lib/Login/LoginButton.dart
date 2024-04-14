@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'base_button.dart';
+import '../ClassBotton/base_button.dart';
 
 class CustomOutlinedButton extends BaseButton {
   CustomOutlinedButton({

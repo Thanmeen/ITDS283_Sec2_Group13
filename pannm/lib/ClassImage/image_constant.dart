@@ -6,16 +6,12 @@ class ImageConstant {
   static String imgSortDown = '$imagePath/img_sort_down.png';
 
   // Home Page images
-  static String imgSorting = '$imagePath/img_sorting.png';
-
-  static String imgSearch = '$imagePath/img_search.png';
-
   static String imgIcons8Cart641 = '$imagePath/img_icons8_cart_64_1.png';
 
   static String imgShirtInStore = '$imagePath/img_shirt_in_store.png';
 
-  static String img6ShirtManufacturers6Ed72h =
-      '$imagePath/img_6_shirt_manufacturers_6_ed72h.png';
+  static String Ads2 =
+      '$imagePath/Ads2.png';
 
   static String img68909208001116 = '$imagePath/img_6890920800_1_1_16.png';
 
