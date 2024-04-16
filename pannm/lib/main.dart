@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           title: 'MobileProject',
           
-          initialRoute: AppRoutes.homePageScreen,
+          initialRoute: AppRoutes.homePage,
           routes: AppRoutes.routes,
         );
      }

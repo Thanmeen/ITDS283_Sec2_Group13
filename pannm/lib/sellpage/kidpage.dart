@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:pannm/sellpage/Topmenpage.dart';
-import 'package:pannm/sellpage/Topwomenpage.dart';
+import 'package:pannm/Sellpage/Topmenpage.dart';
+import 'package:pannm/Sellpage/Topwomenpage.dart';
 
 void main() {
   runApp( MyApp());

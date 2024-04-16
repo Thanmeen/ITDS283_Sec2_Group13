@@ -1,23 +1,27 @@
 import 'package:flutter/material.dart';
 import '../Login/Login.dart';
 import '../HomePage/HomePage.dart';
+import '../sellpage/Topdealpage.dart';
 
 class AppRoutes {
   static const String cartPageScreen = '/cart_page_screen';
 
-  static const String homePageScreen = '/home_page_screen';
+  static const String homePage = '/home_page_screen';
 
   static const String checkoutOneScreen = '/checkout_one_screen';
 
-  static const String loginPageScreen = '/login_page_screen';
+  static const String login = '/login_page_screen';
 
   static const String appNavigationScreen = '/app_navigation_screen';
 
+  static const String TopDeal = '/Topdealpage';
+
   static Map<String, WidgetBuilder> routes = {
     //cartPageScreen: (context) => CartPageScreen(),
-    homePageScreen: (context) => HomePageScreen(),
+    homePage: (context) => HomePageScreen(),
     //checkoutOneScreen: (context) => CheckoutOneScreen(),
-    loginPageScreen: (context) => LoginPageScreen(),
+    login: (context) => LoginPageScreen(),
     //appNavigationScreen: (context) => AppNavigationScreen()
+    TopDeal: (context) => Topdealpage(),
   };
 }

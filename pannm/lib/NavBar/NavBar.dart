@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../ClassImage/image_constant.dart';
-import '../../ClassImage/Image_view.dart';
+import '../ClassImage/image_constant.dart';
+import '../ClassImage/Image_view.dart';
 
 // ignore: must_be_immutable
 class CustomBottomBar extends StatefulWidget {
