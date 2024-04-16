@@ -1,9 +1,10 @@
 
 
 import 'package:flutter/material.dart';
-
-import 'package:pannm/Sellpage/Topmenpage.dart';
-import 'package:pannm/Sellpage/kidpage.dart';
+import '../navbar/NavBar.dart';
+import 'package:pannm/sellpage/Toppage.dart';
+import 'package:pannm/sellpage/Topmenpage.dart';
+import 'package:pannm/sellpage/kidpage.dart';
 
 void main() {
   runApp( MyApp());
@@ -74,12 +75,13 @@ class _TopwomenpageState extends State<Topwomenpage> with SingleTickerProviderSt
           ],
         ),
       ),
+      bottomNavigationBar: NavBar(context),
       body: TabBarView(
         controller: _tabController,
         children: [
           Container(
             child: Center(
-              child: Text('TOP'),
+              child: ProductTopPage(),
             ),
 
           ),
@@ -120,8 +122,9 @@ class Product {
   final String name;
   final String imageUrl;
   final double price;
+  final String IconUrl;
 
-  Product({required this.name, required this.imageUrl, required this.price});
+  Product({required this.name, required this.imageUrl, required this.price,required this.IconUrl});
 }
 
 class ProductWomenPage extends StatelessWidget {
@@ -130,20 +133,27 @@ class ProductWomenPage extends StatelessWidget {
       name: 'Calvin Klein Bra',
       imageUrl: 'https://cdn.discordapp.com/attachments/1161038713866948719/1228051985962500179/ck.jpg?ex=662aa389&is=66182e89&hm=c0b72a3bf453d5adf3dddfe010fb532dc1f2cdec811a345edf0f8e70fcd7d6b0&',
       price: 500,
+      IconUrl: 'https://cdn.discordapp.com/attachments/1161038713866948719/1229844277958410250/add.png?ex=663128bd&is=661eb3bd&hm=68066cdf998f175c3a401eadf1431188212822055e92897d7bf35c3d1a3f7f26&'
+
     ),
     Product(
       name: 'Cargo pant',
       imageUrl: 'https://cdn.discordapp.com/attachments/1161038713866948719/1228051985656320020/cargo.jpg?ex=662aa389&is=66182e89&hm=dc5a73bc28da67686ac1f2ab659c5751e02e76cd427bc1c3c0945647731c932a&',
       price: 250,
+      IconUrl: 'https://cdn.discordapp.com/attachments/1161038713866948719/1229844277958410250/add.png?ex=663128bd&is=661eb3bd&hm=68066cdf998f175c3a401eadf1431188212822055e92897d7bf35c3d1a3f7f26&'
+
     ),
     Product(
       name: 'Black Crop shirt', 
       imageUrl: 'https://cdn.discordapp.com/attachments/1161038713866948719/1228051986264625154/crop.jpg?ex=662aa389&is=66182e89&hm=fd79142b194492c8b4eaf896c9362627ed3ba28b7b0f5dfa78211173f81c1207&', 
-      price: 150)
+      price: 150,
+      IconUrl: 'https://cdn.discordapp.com/attachments/1161038713866948719/1229844277958410250/add.png?ex=663128bd&is=661eb3bd&hm=68066cdf998f175c3a401eadf1431188212822055e92897d7bf35c3d1a3f7f26&'
+
+      )
     // Add more products as needed
   ];
 
-  @override
+ @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
@@ -158,11 +168,21 @@ class ProductWomenPage extends StatelessWidget {
                   height: 400,
                   fit: BoxFit.cover,
                 ),
-                SizedBox(height: 8), // ระยะห่างระหว่างรูปภาพและข้อความ
+                SizedBox(height: 8),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                SizedBox(height: 8),
+                 // ระยะห่างระหว่างรูปภาพและข้อความ
                 Text(
                   product.name,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
+                
+                Image.network(product.IconUrl,
+                width: 24,
+                height: 24,)
+                ]),
                 Text(
                   '\฿${product.price.toStringAsFixed(2)}',
                   style: TextStyle(color: const Color.fromARGB(255, 255, 0, 0)),
@@ -176,3 +196,8 @@ class ProductWomenPage extends StatelessWidget {
   }
 }
 
+  Widget NavBar(BuildContext context) {
+    return CustomBottomBar(
+      onChanged: (BottomBarEnum type) {},
+    );
+  }

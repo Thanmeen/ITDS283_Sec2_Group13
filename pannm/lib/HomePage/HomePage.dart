@@ -823,7 +823,7 @@ Widget Shop(BuildContext context) {
   }
 
   // Section for NavBar
-  Widget NavBar(BuildContext context) {
+Widget NavBar(BuildContext context) {
     return CustomBottomBar(
       onChanged: (BottomBarEnum type) {},
     );
