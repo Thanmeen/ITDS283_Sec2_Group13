@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../ClassImage/image_view.dart';
 import '../ClassImage/image_constant.dart';
 import '../ClassBotton/icon_button.dart';
-import 'navbar/NavBar.dart';
+import '../navbar/NavBar.dart';
 
 // ignore_for_file: must_be_immutable
 class HomePageScreen extends StatelessWidget {
@@ -542,7 +542,7 @@ class HomePageScreen extends StatelessWidget {
   }
 
   // Section for NavBar
-  Widget NavBar(BuildContext context) {
+Widget NavBar(BuildContext context) {
     return CustomBottomBar(
       onChanged: (BottomBarEnum type) {},
     );

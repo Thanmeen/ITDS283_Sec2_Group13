@@ -36,6 +36,7 @@ flutter:
     - assets/images/blue.jpg
     - assets/images/Red.png
     - assets/images/whitekid.png
+    - assets/images/add.png
 
   fonts: 
     - family: Hina Mincho

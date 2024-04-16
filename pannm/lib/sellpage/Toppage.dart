@@ -1,9 +1,7 @@
 
-import 'package:pannm/sellpage/Toppage.dart';
-
 import '../navbar/NavBar.dart';
 import 'package:flutter/material.dart';
-import 'package:pannm/sellpage/Topdealpage.dart';
+import 'package:pannm/sellpage/Topmenpage.dart';
 import 'package:pannm/sellpage/Topwomenpage.dart';
 import 'package:pannm/sellpage/kidpage.dart';
 
@@ -20,17 +18,17 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Topmenpage(),
+      home: Toppage(),
     );
   }
 }
 
-class Topmenpage extends StatefulWidget {
+class Toppage extends StatefulWidget {
   @override
-  _TopmenpageState createState() => _TopmenpageState();
+  _ToppageState createState() => _ToppageState();
 }
 
-class _TopmenpageState extends State<Topmenpage> with SingleTickerProviderStateMixin {
+class _ToppageState extends State<Toppage> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -130,7 +128,7 @@ class Product {
   Product({required this.name, required this.imageUrl, required this.price,required this.IconUrl});
 }
 
-class ProductMenPage extends StatelessWidget {
+class ProductTopPage extends StatelessWidget {
   final List<Product> products = [
     Product(
       name: 'Black hoodie',
@@ -139,15 +137,15 @@ class ProductMenPage extends StatelessWidget {
       IconUrl: 'https://cdn.discordapp.com/attachments/1161038713866948719/1229844277958410250/add.png?ex=663128bd&is=661eb3bd&hm=68066cdf998f175c3a401eadf1431188212822055e92897d7bf35c3d1a3f7f26&'
     ),
     Product(
-      name: 'White T-shirt',
-      imageUrl: 'https://cdn.discordapp.com/attachments/1161038713866948719/1228031289614139623/white.png?ex=662a9043&is=66181b43&hm=b845443135c3ce22170aafe834b81c37e5deacbf0a864022d8e76320e9d67420&',
-      price: 200,
+      name: 'Calvin Klein Bra',
+      imageUrl: 'https://cdn.discordapp.com/attachments/1161038713866948719/1228051985962500179/ck.jpg?ex=662aa389&is=66182e89&hm=c0b72a3bf453d5adf3dddfe010fb532dc1f2cdec811a345edf0f8e70fcd7d6b0&',
+      price: 500,
       IconUrl: 'https://cdn.discordapp.com/attachments/1161038713866948719/1229844277958410250/add.png?ex=663128bd&is=661eb3bd&hm=68066cdf998f175c3a401eadf1431188212822055e92897d7bf35c3d1a3f7f26&'
     ),
     Product(
-      name: 'Hawaii shirt', 
-      imageUrl: 'https://cdn.discordapp.com/attachments/1161038713866948719/1228031289299304458/hawaii.jpg?ex=662a9043&is=66181b43&hm=338762e07290669bbf8169098384478e76fcc6d3d454974ea8e5a2ae976ea739&', 
-      price: 199,
+      name: 'Red kid T-shirt', 
+      imageUrl: 'https://cdn.discordapp.com/attachments/1161038713866948719/1228055488822906941/Red.png?ex=662aa6cc&is=661831cc&hm=f711e12c5e6333af025d1d6fc17fce546dca945ff953c57f1f3784efef67874e&',
+      price: 200,
       IconUrl: 'https://cdn.discordapp.com/attachments/1161038713866948719/1229844277958410250/add.png?ex=663128bd&is=661eb3bd&hm=68066cdf998f175c3a401eadf1431188212822055e92897d7bf35c3d1a3f7f26&')
     // Add more products as needed
   ];
