@@ -2,10 +2,11 @@
 import 'package:pannm/sellpage/Toppage.dart';
 
 import '../navbar/NavBar.dart';
+import '../NavBar/NavBar.dart';
 import 'package:flutter/material.dart';
-import 'package:pannm/sellpage/Topdealpage.dart';
-import 'package:pannm/sellpage/Topwomenpage.dart';
-import 'package:pannm/sellpage/kidpage.dart';
+import 'package:pannm/Sellpage/Topdealpage.dart';
+import 'package:pannm/Sellpage/Topwomenpage.dart';
+import 'package:pannm/Sellpage/kidpage.dart';
 
 void main() {
   runApp( MyApp());
@@ -41,19 +42,45 @@ class _TopmenpageState extends State<Topmenpage> with SingleTickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        leading: IconButton(
-          icon: Icon(Icons.sort),
-          color: Colors.white,
-          onPressed: () {},
+    return AppBar(
+    backgroundColor: Colors.black, // เพิ่มสีดำให้กับพื้นหลังของ AppBar
+    elevation: 0, // เพื่อลบเงาที่แสดง
+    title: Row(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(right: 16.0),
+          child: IconButton(
+            icon: Icon(Icons.sort),
+            onPressed: () {
+              // การคลิกที่ไอคอนเรียงลำดับ
+            },
+          ),
         ),
-        actions: [
-          IconButton(
+        Expanded(
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.grey[200],
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: "Search",
+                  border: InputBorder.none,
+                  icon: Icon(Icons.search),
+                ),
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 16.0),
+          child: IconButton(
             icon: Icon(Icons.shopping_cart),
-            color: Colors.white,
-            onPressed: () {},
+            onPressed: () {
+              // การคลิกที่ไอคอนรถเข็น
+            },
           ),
         ],
         bottom: TabBar(
@@ -76,13 +103,12 @@ class _TopmenpageState extends State<Topmenpage> with SingleTickerProviderStateM
           ],
         ),
       ),
-      bottomNavigationBar: NavBar(context),
       body: TabBarView(
         controller: _tabController,
         children: [
           Container(
             child: Center(
-              child: ProductTopPage(),
+              child: Text('TOP'),
             ),
 
           ),
@@ -107,9 +133,7 @@ class _TopmenpageState extends State<Topmenpage> with SingleTickerProviderStateM
           ),
         ],
       ),
-
     );
-
   }
 
   @override
@@ -195,8 +219,3 @@ class ProductMenPage extends StatelessWidget {
   }
 }
 
-  Widget NavBar(BuildContext context) {
-    return CustomBottomBar(
-      onChanged: (BottomBarEnum type) {},
-    );
-  }

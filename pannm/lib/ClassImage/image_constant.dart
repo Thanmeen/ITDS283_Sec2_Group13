@@ -8,19 +8,19 @@ class ImageConstant {
   // Home Page images
   static String imgIcons8Cart641 = '$imagePath/img_icons8_cart_64_1.png';
 
-  static String imgShirtInStore = '$imagePath/img_shirt_in_store.png';
+  static String Ads1 = '$imagePath/Ads1.png';
 
   static String Ads2 =
       '$imagePath/Ads2.png';
 
-  static String img68909208001116 = '$imagePath/img_6890920800_1_1_16.png';
+  static String WomenShop = '$imagePath/WomenShop.png';
 
-  static String imgImage1 = '$imagePath/img_image_1.png';
+  static String MenShop = '$imagePath/MenShop.png';
 
   static String imgF6ac7c84E08b4 = '$imagePath/img_f6ac7c84_e08b_4.png';
 
-  static String img39816ab501a04166x143 =
-      '$imagePath/img_39816ab5_01a0_4_166x143.png';
+  static String BlackShirt =
+      '$imagePath/BlackShirt.png';
 
   static String imgSettings = '$imagePath/img_settings.svg';
 
