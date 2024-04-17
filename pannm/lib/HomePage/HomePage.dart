@@ -85,7 +85,7 @@ Widget build(BuildContext context) {
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: IconButton(
-              icon: Icon(Icons.sort),
+              icon: Icon(Icons.sort, color: Colors.white),
               onPressed: () {
                 // การคลิกที่ไอคอนเรียงลำดับ
               },
@@ -112,7 +112,7 @@ Widget build(BuildContext context) {
           Padding(
             padding: const EdgeInsets.only(left: 16.0),
             child: IconButton(
-              icon: Icon(Icons.shopping_cart),
+              icon: Icon(Icons.shopping_cart, color: Colors.white),
               onPressed: () {
                 // การคลิกที่ไอคอนรถเข็น
               },
