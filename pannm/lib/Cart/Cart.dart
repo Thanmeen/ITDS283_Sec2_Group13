@@ -97,8 +97,8 @@ class MyApp extends StatelessWidget {
                 },
                 child: Text('CHECKOUT'),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.black,
-                  onPrimary: Colors.white,
+                  // primary: Colors.black,
+                  // onPrimary: Colors.white,
                 ),
               ),
             ],
