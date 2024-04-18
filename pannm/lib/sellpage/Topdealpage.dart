@@ -1,5 +1,5 @@
 
-
+import '../navbar/NavBar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -55,33 +55,7 @@ class Topdealpage extends StatelessWidget {
           //   ],
           // ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color.fromARGB(255, 0, 0, 0),
-          unselectedItemColor: Colors.white, // สีของไอคอนที่ไม่ได้ถูกเลือก
-          selectedItemColor: Colors.white, // สีของไอคอนที่ถูกเลือก
-          items: [
-            
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.menu,
-                
-              ),
-              label: 'menu',
-              backgroundColor: Colors.white
-              ),
-              BottomNavigationBarItem(icon: Icon(
-                Icons.notifications,
-              ),
-              label: 'notification', 
-              ),
-              
-              BottomNavigationBarItem(icon: Icon(
-                Icons.home,
-                
-              ),
-              label: 'home'),
-              
-              ],),
+        bottomNavigationBar: NavBar(context),
         body: Container(
           alignment: Alignment.center,
           child: Column
@@ -168,3 +142,9 @@ class ProductTopdealPage extends StatelessWidget {
     );
   }
 }
+
+Widget NavBar(BuildContext context) {
+    return CustomBottomBar(
+      onChanged: (BottomBarEnum type) {},
+    );
+  }
