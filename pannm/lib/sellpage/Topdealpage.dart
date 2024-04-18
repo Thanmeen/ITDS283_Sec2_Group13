@@ -64,7 +64,7 @@ class Topdealpage extends StatelessWidget {
             Text(
               'Today Special Deal',
               style: TextStyle(
-                fontFamily: 'Hind',
+                fontFamily: 'Ibarra Real Nova',
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
               ),

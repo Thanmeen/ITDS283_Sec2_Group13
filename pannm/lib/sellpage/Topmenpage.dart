@@ -1,8 +1,8 @@
-
+import '../navbar/NavBar.dart';
 import 'package:flutter/material.dart';
 import 'package:pannm/Sellpage/Topwomenpage.dart';
 import 'package:pannm/Sellpage/kidpage.dart';
-
+import 'package:pannm/sellpage/Toppage.dart';
 void main() {
   runApp( MyApp());
 }
@@ -39,48 +39,19 @@ class _TopmenpageState extends State<Topmenpage> with SingleTickerProviderStateM
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black, // เพิ่มสีดำให้กับพื้นหลังของ AppBar
-        elevation: 0, // เพื่อลบเงาที่แสดง
-        title: Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 16.0),
-              child: IconButton(
-                icon: Icon(Icons.sort),
-                onPressed: () {
-                  // การคลิกที่ไอคอนเรียงลำดับ
-                },
-              ),
-            ),
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[200],
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: "Search",
-                      border: InputBorder.none,
-                      icon: Icon(Icons.search),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 16.0),
-              child: IconButton(
-                icon: Icon(Icons.shopping_cart),
-                onPressed: () {
-                  // การคลิกที่ไอคอนรถเข็น
-                },
-              ),
-            ),
-          ],
+        backgroundColor: Colors.black,
+        leading: IconButton(
+          icon: Icon(Icons.sort),
+          color: Colors.white,
+          onPressed: () {},
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.shopping_cart),
+            color: Colors.white,
+            onPressed: () {},
+          ),
+        ],
         bottom: TabBar(
           controller: _tabController,
           indicatorColor: const Color.fromARGB(255, 253, 0, 0),
@@ -101,12 +72,13 @@ class _TopmenpageState extends State<Topmenpage> with SingleTickerProviderStateM
           ],
         ),
       ),
+      bottomNavigationBar: NavBar(context),
       body: TabBarView(
         controller: _tabController,
         children: [
           Container(
             child: Center(
-              child: Text('TOP'),
+              child: ProductTopPage(),
             ),
           ),
           Container(
@@ -212,3 +184,8 @@ class ProductMenPage extends StatelessWidget {
   }
 }
 
+Widget NavBar(BuildContext context) {
+    return CustomBottomBar(
+      onChanged: (BottomBarEnum type) {},
+    );
+  }
