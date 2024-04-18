@@ -43,7 +43,7 @@ Widget build(BuildContext context) {
                 seeAll: "See all",
                 onPressed: () {
                   // การนำทางไปยังหน้าที่เกี่ยวข้อง เช่น หน้ารายการร้านค้า
-                  Navigator.pushReplacementNamed(context, AppRoutes.TopDeal);
+                  Navigator.pushReplacementNamed(context, AppRoutes.TopSold);
                 },
               ),
             ),
