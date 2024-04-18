@@ -32,7 +32,7 @@ class CheckoutPage extends StatelessWidget {
             children: [
               Text(
                 '1. Delivery Option',
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               SizedBox(height: 20),
               Container(
@@ -78,7 +78,7 @@ class CheckoutPage extends StatelessWidget {
               SizedBox(height: 30),
               Text(
                 'Shipping Address',
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               SizedBox(height: 10),
               TextFormField(
@@ -121,7 +121,7 @@ class CheckoutPage extends StatelessWidget {
               SizedBox(height: 40),
               Text(
                 '2. Payment Option',
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               Container(
                 decoration: BoxDecoration(
@@ -222,7 +222,7 @@ class ConfirmCheckoutPage extends StatelessWidget {
             children: [
               Text(
                 'Credit card number',
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               TextFormField(
                 decoration: InputDecoration(
@@ -233,7 +233,7 @@ class ConfirmCheckoutPage extends StatelessWidget {
               SizedBox(height: 20),
               Text(
                 'Expiration date',
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               Row(
                 children: [
@@ -259,7 +259,7 @@ class ConfirmCheckoutPage extends StatelessWidget {
               SizedBox(height: 20),
               Text(
                 'Security code',
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               TextFormField(
                 decoration: InputDecoration(
@@ -282,7 +282,7 @@ class ConfirmCheckoutPage extends StatelessWidget {
               SizedBox(height: 30),
               Text(
                 'Order summary',
-                style: Theme.of(context).textTheme.headline6,
+                style: Theme.of(context).textTheme.titleLarge,
               ),
               ListTile(
                 title: Text('Old School Shirt x2'),
@@ -302,11 +302,11 @@ class ConfirmCheckoutPage extends StatelessWidget {
               ListTile(
                 title: Text(
                   'Order Total',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 trailing: Text(
                   '100 Bath',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
               SizedBox(height: 30),
