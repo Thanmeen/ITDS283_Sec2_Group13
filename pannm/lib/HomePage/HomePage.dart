@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'widgets/ShirtImage.dart';
 import 'package:flutter/material.dart';
-import '../ClassImage/image_view.dart';
-import '../ClassImage/image_constant.dart';
+import '../Widget/ClassImage/image_view.dart';
+import '../Widget/ClassImage/image_constant.dart';
 import '../navbar/NavBar.dart';
-import '../ClassRoutes/app_routes.dart';
+import '../Widget/ClassRoutes/app_routes.dart';
 
 // ignore_for_file: must_be_immutable
 class HomePageScreen extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../Login/Login.dart';
-import '../HomePage/HomePage.dart';
-import '../sellpage/Topdealpage.dart';
-import '../sellpage/Toppage.dart';
+import '../../Login/Login.dart';
+import '../../HomePage/HomePage.dart';
+import '../../sellpage/Topdealpage.dart';
+import '../../sellpage/Toppage.dart';
 
 class AppRoutes {
   static const String cartPageScreen = '/cart_page_screen';

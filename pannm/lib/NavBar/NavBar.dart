@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../ClassImage/image_constant.dart';
-import '../ClassImage/Image_view.dart';
+import '../widget/ClassImage/image_constant.dart';
+import '../widget/ClassImage/Image_view.dart';
 
 // ignore: must_be_immutable
 class CustomBottomBar extends StatefulWidget {
-  CustomBottomBar({this.onChanged});
+  CustomBottomBar({super.key, this.onChanged});
 
   Function(BottomBarEnum)? onChanged;
 
