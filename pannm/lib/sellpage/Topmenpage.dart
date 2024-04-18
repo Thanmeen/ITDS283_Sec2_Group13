@@ -37,47 +37,50 @@ class _TopmenpageState extends State<Topmenpage> with SingleTickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-    backgroundColor: Colors.black, // เพิ่มสีดำให้กับพื้นหลังของ AppBar
-    elevation: 0, // เพื่อลบเงาที่แสดง
-    title: Row(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(right: 16.0),
-          child: IconButton(
-            icon: Icon(Icons.sort),
-            onPressed: () {
-              // การคลิกที่ไอคอนเรียงลำดับ
-            },
-          ),
-        ),
-        Expanded(
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.grey[200],
-              borderRadius: BorderRadius.circular(8.0),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black, // เพิ่มสีดำให้กับพื้นหลังของ AppBar
+        elevation: 0, // เพื่อลบเงาที่แสดง
+        title: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 16.0),
+              child: IconButton(
+                icon: Icon(Icons.sort),
+                onPressed: () {
+                  // การคลิกที่ไอคอนเรียงลำดับ
+                },
+              ),
             ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: "Search",
-                  border: InputBorder.none,
-                  icon: Icon(Icons.search),
+            Expanded(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[200],
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Search",
+                      border: InputBorder.none,
+                      icon: Icon(Icons.search),
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16.0),
+              child: IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () {
+                  // การคลิกที่ไอคอนรถเข็น
+                },
+              ),
+            ),
+          ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(left: 16.0),
-          child: IconButton(
-            icon: Icon(Icons.shopping_cart),
-            onPressed: () {
-              // การคลิกที่ไอคอนรถเข็น
-            },
-          ),
-        ],
         bottom: TabBar(
           controller: _tabController,
           indicatorColor: const Color.fromARGB(255, 253, 0, 0),
@@ -105,25 +108,20 @@ class _TopmenpageState extends State<Topmenpage> with SingleTickerProviderStateM
             child: Center(
               child: Text('TOP'),
             ),
-
           ),
-          
-          // เพิ่มหน้าอื่น ๆ ที่ต้องการเชื่อมโยงที่นี่
           Container(
             child: Center(
-              child: ProductMenPage(),
+              child: ProductMenPage(), // เชื่อมโยงกับหน้า ProductMenPage
             ),
           ),
           Container(
-            
             child: Center(
-              child: ProductWomenPage(),
+              child: ProductWomenPage(), // เชื่อมโยงกับหน้า ProductWomenPage
             ),
           ),
           Container(
-            
             child: Center(
-              child: ProductKidPage(),
+              child: ProductKidPage(), // เชื่อมโยงกับหน้า ProductKidPage
             ),
           ),
         ],

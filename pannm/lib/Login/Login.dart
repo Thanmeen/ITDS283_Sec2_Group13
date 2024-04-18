@@ -3,7 +3,7 @@ import '../Widget/ClassForm/TextForm.dart';
 import '../Widget/ClassBotton/icon_button.dart';
 import '../Widget/ClassRoutes/app_routes.dart';
 import '../Widget/ClassImage/image_constant.dart';
-import '../ClassImage/Image_view.dart';
+import '../widget/ClassImage/Image_view.dart';
 
 class LoginPageScreen extends StatefulWidget {
   LoginPageScreen({Key? key}) : super(key: key);
@@ -283,7 +283,7 @@ void onTapLogin(BuildContext context, TextEditingController usernameController, 
   } else {
     // ถ้าไม่ถูกต้อง แสดงข้อความผิดพลาดหรือกระทำอื่นตามต้องการ
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
+      const SnackBar(
         content: Text('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง'),
       ),
     );

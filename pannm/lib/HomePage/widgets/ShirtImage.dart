@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../ClassImage/Image_view.dart';
+import '../../widget/ClassImage/Image_view.dart';
 
 // ใช้ในSlideADS
 
