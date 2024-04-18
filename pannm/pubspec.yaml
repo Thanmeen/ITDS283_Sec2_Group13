@@ -36,12 +36,7 @@ flutter:
     - assets/images/blue.jpg
     - assets/images/Red.png
     - assets/images/whitekid.png
-<<<<<<< Updated upstream
     - assets/images/add.png
-=======
-    - assets/images/lock_icon.png
-
->>>>>>> Stashed changes
 
   fonts: 
     - family: Hina Mincho
