@@ -1,5 +1,5 @@
 
-
+import '../Widget/ClassRoutes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:pannm/Sort/Sortpage.dart';
 import '../navbar/NavBar.dart';
@@ -199,8 +199,28 @@ class ProductWomenPage extends StatelessWidget {
   }
 }
 
-  Widget NavBar(BuildContext context) {
-    return CustomBottomBar(
-      onChanged: (BottomBarEnum type) {},
-    );
-  }
+Widget NavBar(BuildContext context) {
+  return CustomBottomBar(
+    onChanged: (BottomBarEnum type) {
+      switch (type) {
+        case BottomBarEnum.Home:
+          Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+          break;
+        case BottomBarEnum.Menu:
+          Navigator.of(context).pushReplacementNamed(AppRoutes.setting);
+          break;
+        case BottomBarEnum.Notification:
+          Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+          break;
+        case BottomBarEnum.Contractus:
+          Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+         break;
+        case BottomBarEnum.Profile:
+         Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+        break;
+         default:
+          break;
+      }
+    },
+  );
+}
