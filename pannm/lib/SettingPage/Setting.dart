@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../HomePage/HomePage.dart';
 import '../Widget/ClassRoutes/app_routes.dart';
 
 void main() {
@@ -24,7 +25,7 @@ class SettingsHomePage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.close),
             onPressed: () {
-              Navigator.pushReplacementNamed(context,AppRoutes.homePage);
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePageScreen()));
             },
           ),
         ],

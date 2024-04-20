@@ -170,7 +170,7 @@ Widget NavBar(BuildContext context) {
     onChanged: (BottomBarEnum type) {
       switch (type) {
         case BottomBarEnum.Home:
-          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePageScreen()));
+          Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
           break;
         case BottomBarEnum.Menu:
           Navigator.of(context).pushReplacementNamed(AppRoutes.setting);

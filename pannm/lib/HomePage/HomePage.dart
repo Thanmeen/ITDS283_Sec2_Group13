@@ -821,13 +821,6 @@ Widget Shop(BuildContext context) {
     );
   }
 
-  // Section for NavBar
-Widget NavBar(BuildContext context) {
-    return CustomBottomBar(
-      onChanged: (BottomBarEnum type) {},
-    );
-  }
-
 Widget TitleShopText(
   BuildContext context, {
   required String ShopText,
@@ -902,8 +895,31 @@ Widget DealText(
       ],
     );
   }
-
-  onTapBtnIconButton(BuildContext context) {
-    // TODO: implement Actions
+  
+  // Section for NavBar
+  Widget NavBar(BuildContext context) {
+  return CustomBottomBar(
+    onChanged: (BottomBarEnum type) {
+      switch (type) {
+        case BottomBarEnum.Home:
+          Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+          break;
+        case BottomBarEnum.Menu:
+          Navigator.of(context).pushReplacementNamed(AppRoutes.setting);
+          break;
+        case BottomBarEnum.Notification:
+          Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+          break;
+        case BottomBarEnum.Contractus:
+          Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+         break;
+        case BottomBarEnum.Profile:
+         Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+        break;
+         default:
+          break;
+      }
+    },
+  );
   }
 }

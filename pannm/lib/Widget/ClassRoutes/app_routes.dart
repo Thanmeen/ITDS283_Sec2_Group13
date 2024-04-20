@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pannm/Profile/Profile.dart';
 import '../../Login/Login.dart';
 import '../../HomePage/HomePage.dart';
+import '../../Profile/EditProfile.dart';
 import '../../sellpage/Topdealpage.dart';
 import '../../sellpage/Toppage.dart';
 import '../../SettingPage/Setting.dart';
@@ -22,7 +24,9 @@ class AppRoutes {
 
   static const String setting = '/Setting';
 
-  static const String yourNewRoute = '/Profile';
+  static const String profile = '/Profile';
+
+  static const String editprofile = '/editProfile';
 
   static Map<String, WidgetBuilder> routes = {
     //cartPageScreen: (context) => CartPageScreen(),
@@ -33,5 +37,7 @@ class AppRoutes {
     topDeal: (context) => Topdealpage(),
     topSold:(context) => Toppage(),
     setting:(context) => SettingsPage(),
+    profile:(context) => ProfilePage(),
+    editprofile:(context) =>EditProfilePage(),
   };
 }

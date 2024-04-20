@@ -22,8 +22,9 @@ class MyApp extends StatelessWidget {
           child: child!,
         );
       },
-      initialRoute: AppRoutes.login,
+      initialRoute: AppRoutes.profile,
       routes: AppRoutes.routes,
+
     );
   }
 }
