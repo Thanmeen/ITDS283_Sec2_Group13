@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
-import '../HomePage/HomePage.dart';
 import '../Widget/ClassRoutes/app_routes.dart';
 
-void main() {
-  runApp(SettingsPage());
-}
-
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: SettingsHomePage(),
-    );
-  }
+  _SettingsPageState createState() => _SettingsPageState();
 }
 
-class SettingsHomePage extends StatelessWidget {
+class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +16,7 @@ class SettingsHomePage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.close),
             onPressed: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePageScreen()));
+              Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
             },
           ),
         ],
@@ -37,106 +28,45 @@ class SettingsHomePage extends StatelessWidget {
             title: Text('Account'),
             leading: Icon(Icons.account_circle),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AccountSettingsPage()),
-              );
+              Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
             },
           ),
           ListTile(
             title: Text('Notifications'),
             leading: Icon(Icons.notifications),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NotificationSettingsPage()),
-              );
+              Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
             },
           ),
           ListTile(
             title: Text('App Settings'),
             leading: Icon(Icons.settings),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AppSettingsPage()),
-              );
+              Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
             },
           ),
           ListTile(
             title: Text('Language'),
             leading: Icon(Icons.language),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => LanguageSettingsPage()),
-              );
+              Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
+            },
+          ),
+          ListTile(
+            title: Text('Profile'),
+            leading: Icon(Icons.person),
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
             },
           ),
           ListTile(
             title: Text('Log out'),
             leading: Icon(Icons.exit_to_app),
             onTap: () {
-              // Log out user
+              Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
             },
           ),
         ],
-      ),
-    );
-  }
-}
-
-class AccountSettingsPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Account Settings'),
-      ),
-      body: Center(
-        child: Text('Account Settings Page'),
-      ),
-    );
-  }
-}
-
-class NotificationSettingsPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Notification Settings'),
-      ),
-      body: Center(
-        child: Text('Notification Settings Page'),
-      ),
-    );
-  }
-}
-
-class AppSettingsPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('App Settings'),
-      ),
-      body: Center(
-        child: Text('App Settings Page'),
-      ),
-    );
-  }
-}
-
-class LanguageSettingsPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Language Settings'),
-      ),
-      body: Center(
-        child: Text('Language Settings Page'),
       ),
     );
   }

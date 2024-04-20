@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pannm/HomePage/HomePage.dart';
+import '../Widget/ClassRoutes/app_routes.dart';
 import 'cart.dart'; // import ไฟล์ CartPage เพื่อใช้งานคลาส CartPage
 
 class ConfirmPage extends StatelessWidget {
@@ -145,7 +147,7 @@ class ConfirmPage extends StatelessWidget {
             // PLACE ORDER button
             ElevatedButton(
               onPressed: () {
-                // ปุ่ม PLACE ORDER
+                Navigator.pushReplacementNamed(context, AppRoutes.homePage);
               },
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.black), // กำหนดสีพื้นหลังของปุ่มเป็นสีดำ
@@ -165,7 +167,10 @@ class ConfirmPage extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {
-                // ปุ่ม Cancel Order
+                Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePageScreen()),
+                      );
               },
               child: Text(
                 'Cancel Order',

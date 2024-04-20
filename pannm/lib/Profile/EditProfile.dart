@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+import 'package:firebase_auth/firebase_auth.dart'; // เพิ่มการ import
+
+import '../Widget/ClassRoutes/app_routes.dart';
 
 class EditProfilePage extends StatelessWidget {
   @override
@@ -26,6 +29,12 @@ class _EditProfileFormState extends State<EditProfileForm> {
 
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
+    String email = user != null ? user.email ?? "" : ""; // ดึงอีเมลจาก Firebase Authentication
+
+    // กำหนดค่าอีเมลให้กับ _emailController
+    _emailController.text = email;
+
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +52,7 @@ class _EditProfileFormState extends State<EditProfileForm> {
             onPressed: () async {
               // เรียกใช้งานกล้องโทรศัพท์เพื่อถ่ายรูป
               final picker = ImagePicker();
-              final pickedFile = await picker.getImage(source: ImageSource.camera);
+              final pickedFile = await picker.pickImage(source: ImageSource.camera);
 
               if (pickedFile != null) {
                 setState(() {
@@ -62,13 +71,22 @@ class _EditProfileFormState extends State<EditProfileForm> {
             controller: _emailController,
             decoration: InputDecoration(labelText: 'อีเมล'),
           ),
-          ElevatedButton(
-            onPressed: () {
+         ElevatedButton(
+          onPressed: () async {
+            final user = FirebaseAuth.instance.currentUser;
+            try {
+              // อัปเดตชื่อผู้ใช้ใน Firebase Authentication
+              await user?.updateDisplayName(_usernameController.text);
+              
               // บันทึกข้อมูลและกลับไปยังหน้าโปรไฟล์
-              Navigator.pop(context);
-            },
-            child: Text('บันทึก'),
-          ),
+              Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
+            } catch (e) {
+              print("เกิดข้อผิดพลาดในการอัปเดตชื่อผู้ใช้: $e");
+              // จัดการกับข้อผิดพลาดที่เกิดขึ้นได้ตามที่คุณต้องการ
+            }
+          },
+          child: Text('บันทึก'),
+        ),
         ],
       ),
     );
