@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:pannm/Sort/Sortpage.dart';
 import 'widgets/ShirtImage.dart';
 import 'package:flutter/material.dart';
 import '../Widget/ClassImage/image_view.dart';
@@ -84,6 +85,7 @@ Widget build(BuildContext context) {
             child: IconButton(
               icon: const Icon(Icons.sort, color: Colors.white),
               onPressed: () {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Sort() ));
                 // การคลิกที่ไอคอนเรียงลำดับ
               },
             ),

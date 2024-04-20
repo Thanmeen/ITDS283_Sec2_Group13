@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:pannm/HomePage/HomePage.dart';
 import '../widget/ClassImage/image_constant.dart';
 import '../widget/ClassImage/Image_view.dart';
 import '../Widget/ClassRoutes/app_routes.dart';
 
 // ignore: must_be_immutable
 class CustomBottomBar extends StatefulWidget {
-  CustomBottomBar({Key? key, required this.onChanged}) : super(key: key);
+  CustomBottomBar({Key? key,required this.onChanged,}) : super(key: key);
 
   final Function(BottomBarEnum)? onChanged;
+
 
   @override
   CustomBottomBarState createState() => CustomBottomBarState();
@@ -52,22 +54,23 @@ class CustomBottomBarState extends State<CustomBottomBar> {
   void onChanged(BottomBarEnum selectedBar) {
   switch (selectedBar) {
     case BottomBarEnum.Home:
-      Navigator.pushReplacementNamed(context, AppRoutes.homePage);
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => HomePageScreen()));
       break;
     case BottomBarEnum.Menu:
-      Navigator.pushReplacementNamed(context, AppRoutes.setting);
+      Navigator.of(context).pushReplacementNamed(AppRoutes.setting);
       break;
     case BottomBarEnum.Notification:
-      Navigator.pushReplacementNamed(context, AppRoutes.homePage);
+      Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
       break;
     case BottomBarEnum.Contractus:
-      Navigator.pushReplacementNamed(context, AppRoutes.homePage);
+      Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
       break;
     case BottomBarEnum.Profile:
-      Navigator.pushReplacementNamed(context, AppRoutes.homePage);
+      Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
       break;
   }
 }
+
 
   @override
   Widget build(BuildContext context) {
