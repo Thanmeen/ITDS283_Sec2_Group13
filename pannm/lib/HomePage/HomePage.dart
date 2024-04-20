@@ -113,7 +113,7 @@ Widget build(BuildContext context) {
             child: IconButton(
               icon: const Icon(Icons.shopping_cart, color: Colors.white),
               onPressed: () {
-                // การคลิกที่ไอคอนรถเข็น
+                Navigator.of(context).pushReplacementNamed(AppRoutes.cart);
               },
             ),
           ),
