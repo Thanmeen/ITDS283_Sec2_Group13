@@ -1,5 +1,5 @@
 import 'package:pannm/Sort/Sortpage.dart';
-
+import 'package:pannm/Widget/ClassRoutes/app_routes.dart';
 import '../navbar/NavBar.dart';
 import 'package:flutter/material.dart';
 import 'package:pannm/Sellpage/Topwomenpage.dart';
@@ -87,17 +87,17 @@ class _TopmenpageState extends State<Topmenpage> with SingleTickerProviderStateM
           ),
           Container(
             child: Center(
-              child: ProductMenPage(), // เชื่อมโยงกับหน้า ProductMenPage
+              child: ProductMenPage(), 
             ),
           ),
           Container(
             child: Center(
-              child: ProductWomenPage(), // เชื่อมโยงกับหน้า ProductWomenPage
+              child: ProductWomenPage(), 
             ),
           ),
           Container(
             child: Center(
-              child: ProductKidPage(), // เชื่อมโยงกับหน้า ProductKidPage
+              child: ProductKidPage(), 
             ),
           ),
         ],
@@ -189,7 +189,27 @@ class ProductMenPage extends StatelessWidget {
 }
 
 Widget NavBar(BuildContext context) {
-    return CustomBottomBar(
-      onChanged: (BottomBarEnum type) {},
-    );
-  }
+  return CustomBottomBar(
+    onChanged: (BottomBarEnum type) {
+      switch (type) {
+        case BottomBarEnum.Home:
+          Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+          break;
+        case BottomBarEnum.Menu:
+          Navigator.of(context).pushReplacementNamed(AppRoutes.setting);
+          break;
+        case BottomBarEnum.Notification:
+          Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+          break;
+        case BottomBarEnum.Contractus:
+          Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+         break;
+        case BottomBarEnum.Profile:
+         Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+        break;
+         default:
+          break;
+      }
+    },
+  );
+}

@@ -218,9 +218,13 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   ),
                   SizedBox(width: 8.0),
                   Text(
-                    'We protect all your sensitive information with TLS (Transport Layer Security) encryption technology',
+                    'We protect all your sensitive information with TLS',
                     textAlign: TextAlign.center,
+                    softWrap: true,
+                    overflow: TextOverflow.visible,
+                    maxLines: null,
                   ),
+                  
                 ],
               ),
               SizedBox(height: 16.0),
