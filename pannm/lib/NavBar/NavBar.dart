@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import '../widget/ClassImage/image_constant.dart';
 import '../widget/ClassImage/Image_view.dart';
+import '../Widget/ClassRoutes/app_routes.dart';
 
 // ignore: must_be_immutable
 class CustomBottomBar extends StatefulWidget {
-  CustomBottomBar({super.key, this.onChanged});
+  CustomBottomBar({Key? key, required this.onChanged}) : super(key: key);
 
-  Function(BottomBarEnum)? onChanged;
+  final Function(BottomBarEnum)? onChanged;
 
   @override
   CustomBottomBarState createState() => CustomBottomBarState();
@@ -47,6 +48,26 @@ class CustomBottomBarState extends State<CustomBottomBar> {
       type: BottomBarEnum.Profile,
     )
   ];
+
+  void onChanged(BottomBarEnum selectedBar) {
+  switch (selectedBar) {
+    case BottomBarEnum.Home:
+      Navigator.pushReplacementNamed(context, AppRoutes.homePage);
+      break;
+    case BottomBarEnum.Menu:
+      Navigator.pushReplacementNamed(context, AppRoutes.setting);
+      break;
+    case BottomBarEnum.Notification:
+      Navigator.pushReplacementNamed(context, AppRoutes.homePage);
+      break;
+    case BottomBarEnum.Contractus:
+      Navigator.pushReplacementNamed(context, AppRoutes.homePage);
+      break;
+    case BottomBarEnum.Profile:
+      Navigator.pushReplacementNamed(context, AppRoutes.homePage);
+      break;
+  }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -115,14 +136,16 @@ class CustomBottomBarState extends State<CustomBottomBar> {
           );
         }),
         onTap: (index) {
-          selectedIndex = index;
+          setState(() {
+            selectedIndex = index;
+          });
           widget.onChanged?.call(bottomMenuList[index].type);
-          setState(() {});
         },
       ),
     );
   }
 }
+
 
 enum BottomBarEnum {
   Menu,
@@ -147,6 +170,7 @@ class BottomMenuModel {
   String? title;
 
   BottomBarEnum type;
+
 }
 
 class DefaultWidget extends StatelessWidget {

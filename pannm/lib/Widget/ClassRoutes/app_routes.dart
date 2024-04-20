@@ -15,17 +15,21 @@ class AppRoutes {
 
   static const String appNavigationScreen = '/app_navigation_screen';
 
-  static const String TopDeal = '/Topdealpage';
+  static const String topDeal = '/Topdealpage';
 
-  static const String TopSold = '/Toppage';
+  static const String topSold = '/Toppage';
+
+  static const String setting = '/Setting';
+
+  static const String yourNewRoute = '/Profile';
 
   static Map<String, WidgetBuilder> routes = {
     //cartPageScreen: (context) => CartPageScreen(),
     homePage: (context) => HomePageScreen(),
     //checkoutOneScreen: (context) => CheckoutOneScreen(),
-    login: (context) => LoginPageScreen(),
+    login: (context) => const LoginPageScreen(),
     //appNavigationScreen: (context) => AppNavigationScreen()
-    TopDeal: (context) => Topdealpage(),
-    TopSold:(context) => Toppage(),
+    topDeal: (context) => Topdealpage(),
+    topSold:(context) => Toppage(),
   };
 }

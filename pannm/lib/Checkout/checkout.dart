@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,20 +14,22 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: CheckoutPage(),
+      home: const CheckoutPage(),
     );
   }
 }
 
 class CheckoutPage extends StatelessWidget {
+  const CheckoutPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Checkout'),
+        title: const Text('Checkout'),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,19 +38,19 @@ class CheckoutPage extends StatelessWidget {
                 '1. Delivery Option',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black),
                   borderRadius: BorderRadius.circular(5),
                 ),
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 child: ListTile(
-                  title: Text(
+                  title: const Text(
                     'Ship to address',
                     style: TextStyle(color: Colors.black),
                   ),
-                  subtitle: Text(
+                  subtitle: const Text(
                     'Shipping: 50 Bath',
                     style: TextStyle(color: Colors.black),
                   ),
@@ -60,13 +64,13 @@ class CheckoutPage extends StatelessWidget {
                   border: Border.all(color: Colors.black),
                   borderRadius: BorderRadius.circular(5),
                 ),
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 child: ListTile(
-                  title: Text(
+                  title: const Text(
                     'Pick up at store',
                     style: TextStyle(color: Colors.black),
                   ),
-                  subtitle: Text(
+                  subtitle: const Text(
                     'Shipping: Free',
                     style: TextStyle(color: Colors.black),
                   ),
@@ -75,50 +79,50 @@ class CheckoutPage extends StatelessWidget {
                   },
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Text(
                 'Shipping Address',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Name',
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Address',
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'City',
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Postal Code',
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Align(
                 alignment: Alignment.centerLeft,
                 child: TextButton(
                   onPressed: () {
                     // Handle edit shipping address
                   },
-                  child: Text('Edit'),
+                  child: const Text('Edit'),
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               Text(
                 '2. Payment Option',
                 style: Theme.of(context).textTheme.titleLarge,
@@ -128,9 +132,9 @@ class CheckoutPage extends StatelessWidget {
                   border: Border.all(color: Colors.black),
                   borderRadius: BorderRadius.circular(5),
                 ),
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 child: ListTile(
-                  title: Text(
+                  title: const Text(
                     'Credit Card',
                     style: TextStyle(color: Colors.black),
                   ),
@@ -144,9 +148,9 @@ class CheckoutPage extends StatelessWidget {
                   border: Border.all(color: Colors.black),
                   borderRadius: BorderRadius.circular(5),
                 ),
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 child: ListTile(
-                  title: Text(
+                  title: const Text(
                     'PayPal',
                     style: TextStyle(color: Colors.black),
                   ),
@@ -160,9 +164,9 @@ class CheckoutPage extends StatelessWidget {
                   border: Border.all(color: Colors.black),
                   borderRadius: BorderRadius.circular(5),
                 ),
-                margin: EdgeInsets.only(bottom: 10),
+                margin: const EdgeInsets.only(bottom: 10),
                 child: ListTile(
-                  title: Text(
+                  title: const Text(
                     'Cash (Only For Self Pickup)',
                     style: TextStyle(color: Colors.black),
                   ),
@@ -171,12 +175,12 @@ class CheckoutPage extends StatelessWidget {
                   },
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Row(
                 children: [
                   Image.asset('assets/images/lock_icon.png', width: 30),
-                  SizedBox(width: 10),
-                  Expanded(
+                  const SizedBox(width: 10),
+                  const Expanded(
                     child: Text(
                       'We protect all your sensitive information with TLS (Transport Layer Security) encryption technology',
                       style: TextStyle(color: Colors.black),
@@ -184,15 +188,15 @@ class CheckoutPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => ConfirmCheckoutPage()),
+                    MaterialPageRoute(builder: (context) => const ConfirmCheckoutPage()),
                   );
                 },
-                child: SizedBox.expand(
+                child: const SizedBox.expand(
                   child: Text(
                     'Continue',
                     style: TextStyle(fontSize: 24), // Make the text larger
@@ -208,14 +212,16 @@ class CheckoutPage extends StatelessWidget {
 }
 
 class ConfirmCheckoutPage extends StatelessWidget {
+  const ConfirmCheckoutPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CONFIRM CHECK OUT'),
+        title: const Text('CONFIRM CHECK OUT'),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Center(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -225,12 +231,12 @@ class ConfirmCheckoutPage extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Please enter the credit card number.',
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text(
                 'Expiration date',
                 style: Theme.of(context).textTheme.titleLarge,
@@ -239,16 +245,16 @@ class ConfirmCheckoutPage extends StatelessWidget {
                 children: [
                   Expanded(
                     child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Month',
                         border: OutlineInputBorder(),
                       ),
                     ),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   Expanded(
                     child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'Year',
                         border: OutlineInputBorder(),
                       ),
@@ -256,13 +262,13 @@ class ConfirmCheckoutPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text(
                 'Security code',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               TextFormField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Security Code here',
                   border: OutlineInputBorder(),
                 ),
@@ -270,8 +276,8 @@ class ConfirmCheckoutPage extends StatelessWidget {
               Row(
                 children: [
                   Image.asset('assets/images/lock_icon.png', width: 30),
-                  SizedBox(width: 10),
-                  Expanded(
+                  const SizedBox(width: 10),
+                  const Expanded(
                     child: Text(
                       'We protect all your sensitive information with TLS (Transport Layer Security) encryption technology',
                       style: TextStyle(color: Colors.black),
@@ -279,26 +285,26 @@ class ConfirmCheckoutPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Text(
                 'Order summary',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
-              ListTile(
+              const ListTile(
                 title: Text('Old School Shirt x2'),
               ),
-              ListTile(
+              const ListTile(
                 title: Text('Shipping'),
                 trailing: Text('100 Bath'),
               ),
-              ListTile(
+              const ListTile(
                 title: Text('Estimated Tax'),
                 trailing: Text('TBD'),
               ),
-              ListTile(
+              const ListTile(
                 title: Text('1 Item(s)'),
               ),
-              Divider(),
+              const Divider(),
               ListTile(
                 title: Text(
                   'Order Total',
@@ -309,12 +315,12 @@ class ConfirmCheckoutPage extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
                   // Handle place order
                 },
-                child: Text('PLACE ORDER'),
+                child: const Text('PLACE ORDER'),
               ),
             ],
           ),

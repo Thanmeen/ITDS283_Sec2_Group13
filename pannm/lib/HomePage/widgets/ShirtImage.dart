@@ -7,9 +7,9 @@ import '../../widget/ClassImage/Image_view.dart';
 class ShirtImageItem extends StatelessWidget {
   final String imagePath; // เพิ่มพารามิเตอร์สำหรับรับรูปภาพ
   const ShirtImageItem({
-    Key? key,
+    super.key,
     required this.imagePath, // รับค่ารูปภาพจากภายนอก
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -8,10 +8,7 @@ import '../Widget/ClassRoutes/app_routes.dart';
 
 // ignore_for_file: must_be_immutable
 class HomePageScreen extends StatelessWidget {
-  HomePageScreen({Key? key})
-      : super(
-          key: key,
-        );
+  HomePageScreen({super.key});
 
   TextEditingController searchController = TextEditingController();
 
@@ -23,17 +20,17 @@ class HomePageScreen extends StatelessWidget {
 Widget build(BuildContext context) {
   return SafeArea(
     child: Scaffold(
-      backgroundColor: Color(0XFFFFFFFF),
+      backgroundColor: const Color(0XFFFFFFFF),
       appBar: SearchBar(context),
       body: Container(
         width: double.maxFinite,
-        padding: EdgeInsets.symmetric(vertical: 30),
+        padding: const EdgeInsets.symmetric(vertical: 30),
         child: Column(
           children: [
             SlideADS(context),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Padding(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 left: 19,
                 right: 11,
               ),
@@ -43,15 +40,15 @@ Widget build(BuildContext context) {
                 seeAll: "See all",
                 onPressed: () {
                   // การนำทางไปยังหน้าที่เกี่ยวข้อง เช่น หน้ารายการร้านค้า
-                  Navigator.pushReplacementNamed(context, AppRoutes.TopSold);
+                  Navigator.pushReplacementNamed(context, AppRoutes.topSold);
                 },
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Shop(context),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Padding(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 left: 19,
                 right: 11,
               ),
@@ -60,13 +57,13 @@ Widget build(BuildContext context) {
                 ShopText: "Today Special Deal",
                 seeAll: "See all",
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, AppRoutes.TopDeal);
+                  Navigator.pushReplacementNamed(context, AppRoutes.topDeal);
                 },
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             TodaySpecialDeal(context),
-            SizedBox(height: 9)
+            const SizedBox(height: 9)
           ],
         ),
       ),
@@ -85,7 +82,7 @@ Widget build(BuildContext context) {
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
             child: IconButton(
-              icon: Icon(Icons.sort, color: Colors.white),
+              icon: const Icon(Icons.sort, color: Colors.white),
               onPressed: () {
                 // การคลิกที่ไอคอนเรียงลำดับ
               },
@@ -97,8 +94,8 @@ Widget build(BuildContext context) {
                 color: Colors.grey[200],
                 borderRadius: BorderRadius.circular(8.0),
               ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 8.0),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: "Search",
@@ -112,7 +109,7 @@ Widget build(BuildContext context) {
           Padding(
             padding: const EdgeInsets.only(left: 16.0),
             child: IconButton(
-              icon: Icon(Icons.shopping_cart, color: Colors.white),
+              icon: const Icon(Icons.shopping_cart, color: Colors.white),
               onPressed: () {
                 // การคลิกที่ไอคอนรถเข็น
               },
@@ -126,7 +123,7 @@ Widget build(BuildContext context) {
   // Section for Shirt Ads zone2
   Widget SlideADS(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 11),
+      padding: const EdgeInsets.only(left: 11),
       child: Column(
         children: [
           CarouselSlider.builder(
@@ -153,12 +150,12 @@ Widget build(BuildContext context) {
                     imagePath: ImageConstant.Ads2, // รูปภาพที่ 2
                   );
                 default:
-                  return SizedBox(); // กรณีอื่นๆ ให้ส่ง SizedBox กลับไป
+                  return const SizedBox(); // กรณีอื่นๆ ให้ส่ง SizedBox กลับไป
               }
             },
           ),
-          SizedBox(height: 9),
-          Align(
+          const SizedBox(height: 9),
+          const Align(
             alignment: Alignment.centerRight,
             child: Padding(
               padding: EdgeInsets.only(left: 169),
@@ -179,22 +176,22 @@ Widget Shop(BuildContext context) {
     child: IntrinsicWidth(
       child: Row(
         children: [
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
           // อันที่ 1
           SizedBox(
             width: 142,
             child: Align(
               alignment: Alignment.centerRight,
               child: Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 9,
                   vertical: 10,
                 ),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 155, 88, 88),
+                  color: const Color.fromARGB(255, 155, 88, 88),
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: Color.fromARGB(255, 0, 0, 0),
+                    color: const Color.fromARGB(255, 0, 0, 0),
                     width: 1,
                   ),
                 ),
@@ -205,9 +202,9 @@ Widget Shop(BuildContext context) {
                       height: 46,
                       width: 47,
                       radius: BorderRadius.circular(23),
-                      margin: EdgeInsets.only(bottom: 1),
+                      margin: const EdgeInsets.only(bottom: 1),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(
                         left: 8,
                         top: 13,
@@ -228,22 +225,22 @@ Widget Shop(BuildContext context) {
               ),
             ),
           ),
-          SizedBox(width: 20), // ระยะห่างระหว่าง Container
+          const SizedBox(width: 20), // ระยะห่างระหว่าง Container
           // อันที่ 2
           SizedBox(
             width: 142,
             child: Align(
               alignment: Alignment.centerRight,
               child: Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 9,
                   vertical: 10,
                 ),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 83, 83, 83),
+                  color: const Color.fromARGB(255, 83, 83, 83),
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: Color.fromARGB(255, 0, 0, 0),
+                    color: const Color.fromARGB(255, 0, 0, 0),
                     width: 1,
                   ),
                 ),
@@ -254,9 +251,9 @@ Widget Shop(BuildContext context) {
                       height: 46,
                       width: 47,
                       radius: BorderRadius.circular(23),
-                      margin: EdgeInsets.only(bottom: 1),
+                      margin: const EdgeInsets.only(bottom: 1),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(
                         left: 8,
                         top: 13,
@@ -277,22 +274,22 @@ Widget Shop(BuildContext context) {
               ),
             ),
           ),
-          SizedBox(width: 20), // ระยะห่างระหว่าง Container
+          const SizedBox(width: 20), // ระยะห่างระหว่าง Container
           // อันที่ 3
           SizedBox(
             width: 142,
             child: Align(
               alignment: Alignment.centerRight,
               child: Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 9,
                   vertical: 10,
                 ),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 130, 130),
+                  color: const Color.fromARGB(255, 255, 130, 130),
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: Color(0XFF000000),
+                    color: const Color(0XFF000000),
                     width: 1,
                   ),
                 ),
@@ -303,9 +300,9 @@ Widget Shop(BuildContext context) {
                       height: 46,
                       width: 47,
                       radius: BorderRadius.circular(23),
-                      margin: EdgeInsets.only(bottom: 1),
+                      margin: const EdgeInsets.only(bottom: 1),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(
                         left: 8,
                         top: 13,
@@ -326,22 +323,22 @@ Widget Shop(BuildContext context) {
               ),
             ),
           ),
-          SizedBox(width: 20), // ระยะห่างระหว่าง Container
+          const SizedBox(width: 20), // ระยะห่างระหว่าง Container
           // อันที่ 4
           SizedBox(
             width: 142,
             child: Align(
               alignment: Alignment.centerRight,
               child: Container(
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 9,
                   vertical: 10,
                 ),
                 decoration: BoxDecoration(
-                  color: Color(0XFF8C8989),
+                  color: const Color(0XFF8C8989),
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: Color(0XFF000000),
+                    color: const Color(0XFF000000),
                     width: 1,
                   ),
                 ),
@@ -352,9 +349,9 @@ Widget Shop(BuildContext context) {
                       height: 46,
                       width: 47,
                       radius: BorderRadius.circular(23),
-                      margin: EdgeInsets.only(bottom: 1),
+                      margin: const EdgeInsets.only(bottom: 1),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(
                         left: 8,
                         top: 13,
@@ -375,7 +372,7 @@ Widget Shop(BuildContext context) {
               ),
             ),
           ),
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
         ],
       ),
     ),
@@ -389,14 +386,14 @@ Widget Shop(BuildContext context) {
       child: IntrinsicWidth(
         child: Row(
           children: [
-            SizedBox(width: 30),
+            const SizedBox(width: 30),
             // อันที่ 1
             Container(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 9,
                 vertical: 11,
               ),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0XFFF3F3F3),
               ),
               child: Column(
@@ -412,14 +409,14 @@ Widget Shop(BuildContext context) {
                     ),
                     alignment: Alignment.center,
                   ),
-                  SizedBox(height: 3),
+                  const SizedBox(height: 3),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
                         height: 39,
                         width: 60,
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                           top: 15,
                           bottom: 6,
                         ),
@@ -431,10 +428,10 @@ Widget Shop(BuildContext context) {
                               height: 10,
                               width: 45,
                               alignment: Alignment.bottomLeft,
-                              margin: EdgeInsets.only(bottom: 3),
+                              margin: const EdgeInsets.only(bottom: 3),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 7),
+                              padding: const EdgeInsets.only(left: 7),
                               child: DealText(
                                 context,
                                 price: "฿ 100",
@@ -446,11 +443,11 @@ Widget Shop(BuildContext context) {
                       ),
                       Container(
                         width: 55,
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                           left: 7,
                           bottom: 34,
                         ),
-                        child: Text(
+                        child: const Text(
                           "Black Shirt",
                           maxLines: null,
                           overflow: TextOverflow.ellipsis,
@@ -464,8 +461,8 @@ Widget Shop(BuildContext context) {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 12),
-                        constraints: BoxConstraints(
+                        margin: const EdgeInsets.only(top: 12),
+                        constraints: const BoxConstraints(
                             maxWidth: 30,
                             maxHeight: 30), // กำหนดขนาดสูงสุดของ Container
                         decoration: BoxDecoration(
@@ -480,7 +477,7 @@ Widget Shop(BuildContext context) {
                             onPressed: () {
                               // กระทำที่ต้องการเมื่อกดปุ่ม
                             },
-                            child: Text(
+                            child: const Text(
                               '+',
                               style: TextStyle(
                                 color: Colors.white,
@@ -495,15 +492,15 @@ Widget Shop(BuildContext context) {
                 ],
               ),
             ),
-            SizedBox(width: 30),
+            const SizedBox(width: 30),
             // อันที่ 2
 
             Container(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 9,
                 vertical: 11,
               ),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0XFFF3F3F3),
               ),
               child: Column(
@@ -519,14 +516,14 @@ Widget Shop(BuildContext context) {
                     ),
                     alignment: Alignment.center,
                   ),
-                  SizedBox(height: 3),
+                  const SizedBox(height: 3),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
                         height: 39,
                         width: 60,
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                           top: 15,
                           bottom: 6,
                         ),
@@ -538,10 +535,10 @@ Widget Shop(BuildContext context) {
                               height: 10,
                               width: 45,
                               alignment: Alignment.bottomLeft,
-                              margin: EdgeInsets.only(bottom: 3),
+                              margin: const EdgeInsets.only(bottom: 3),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 7),
+                              padding: const EdgeInsets.only(left: 7),
                               child: DealText(
                                 context,
                                 price: "฿ 100",
@@ -553,11 +550,11 @@ Widget Shop(BuildContext context) {
                       ),
                       Container(
                         width: 55,
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                           left: 7,
                           bottom: 34,
                         ),
-                        child: Text(
+                        child: const Text(
                           "Black Shirt",
                           maxLines: null,
                           overflow: TextOverflow.ellipsis,
@@ -571,8 +568,8 @@ Widget Shop(BuildContext context) {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 12),
-                        constraints: BoxConstraints(
+                        margin: const EdgeInsets.only(top: 12),
+                        constraints: const BoxConstraints(
                             maxWidth: 30,
                             maxHeight: 30), // กำหนดขนาดสูงสุดของ Container
                         decoration: BoxDecoration(
@@ -587,7 +584,7 @@ Widget Shop(BuildContext context) {
                             onPressed: () {
                               // กระทำที่ต้องการเมื่อกดปุ่ม
                             },
-                            child: Text(
+                            child: const Text(
                               '+',
                               style: TextStyle(
                                 color: Colors.white,
@@ -602,15 +599,15 @@ Widget Shop(BuildContext context) {
                 ],
               ),
             ),
-            SizedBox(width: 30),
+            const SizedBox(width: 30),
             // อันที่ 3
 
             Container(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 9,
                 vertical: 11,
               ),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0XFFF3F3F3),
               ),
               child: Column(
@@ -626,14 +623,14 @@ Widget Shop(BuildContext context) {
                     ),
                     alignment: Alignment.center,
                   ),
-                  SizedBox(height: 3),
+                  const SizedBox(height: 3),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
                         height: 39,
                         width: 60,
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                           top: 15,
                           bottom: 6,
                         ),
@@ -645,10 +642,10 @@ Widget Shop(BuildContext context) {
                               height: 10,
                               width: 45,
                               alignment: Alignment.bottomLeft,
-                              margin: EdgeInsets.only(bottom: 3),
+                              margin: const EdgeInsets.only(bottom: 3),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 7),
+                              padding: const EdgeInsets.only(left: 7),
                               child: DealText(
                                 context,
                                 price: "฿ 100",
@@ -660,11 +657,11 @@ Widget Shop(BuildContext context) {
                       ),
                       Container(
                         width: 55,
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                           left: 7,
                           bottom: 34,
                         ),
-                        child: Text(
+                        child: const Text(
                           "Black Shirt",
                           maxLines: null,
                           overflow: TextOverflow.ellipsis,
@@ -678,8 +675,8 @@ Widget Shop(BuildContext context) {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 12),
-                        constraints: BoxConstraints(
+                        margin: const EdgeInsets.only(top: 12),
+                        constraints: const BoxConstraints(
                             maxWidth: 30,
                             maxHeight: 30), // กำหนดขนาดสูงสุดของ Container
                         decoration: BoxDecoration(
@@ -694,7 +691,7 @@ Widget Shop(BuildContext context) {
                             onPressed: () {
                               // กระทำที่ต้องการเมื่อกดปุ่ม
                             },
-                            child: Text(
+                            child: const Text(
                               '+',
                               style: TextStyle(
                                 color: Colors.white,
@@ -709,15 +706,15 @@ Widget Shop(BuildContext context) {
                 ],
               ),
             ),
-            SizedBox(width: 30),
+            const SizedBox(width: 30),
             //อันที่ 4
 
             Container(
-              padding: EdgeInsets.symmetric(
+              padding: const EdgeInsets.symmetric(
                 horizontal: 9,
                 vertical: 11,
               ),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Color(0XFFF3F3F3),
               ),
               child: Column(
@@ -733,14 +730,14 @@ Widget Shop(BuildContext context) {
                     ),
                     alignment: Alignment.center,
                   ),
-                  SizedBox(height: 3),
+                  const SizedBox(height: 3),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Container(
                         height: 39,
                         width: 60,
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                           top: 15,
                           bottom: 6,
                         ),
@@ -752,10 +749,10 @@ Widget Shop(BuildContext context) {
                               height: 10,
                               width: 45,
                               alignment: Alignment.bottomLeft,
-                              margin: EdgeInsets.only(bottom: 3),
+                              margin: const EdgeInsets.only(bottom: 3),
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 7),
+                              padding: const EdgeInsets.only(left: 7),
                               child: DealText(
                                 context,
                                 price: "฿ 100",
@@ -767,11 +764,11 @@ Widget Shop(BuildContext context) {
                       ),
                       Container(
                         width: 55,
-                        margin: EdgeInsets.only(
+                        margin: const EdgeInsets.only(
                           left: 7,
                           bottom: 34,
                         ),
-                        child: Text(
+                        child: const Text(
                           "Black Shirt",
                           maxLines: null,
                           overflow: TextOverflow.ellipsis,
@@ -785,8 +782,8 @@ Widget Shop(BuildContext context) {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 12),
-                        constraints: BoxConstraints(
+                        margin: const EdgeInsets.only(top: 12),
+                        constraints: const BoxConstraints(
                             maxWidth: 30,
                             maxHeight: 30), // กำหนดขนาดสูงสุดของ Container
                         decoration: BoxDecoration(
@@ -801,7 +798,7 @@ Widget Shop(BuildContext context) {
                             onPressed: () {
                               // กระทำที่ต้องการเมื่อกดปุ่ม
                             },
-                            child: Text(
+                            child: const Text(
                               '+',
                               style: TextStyle(
                                 color: Colors.white,
@@ -829,7 +826,7 @@ Widget NavBar(BuildContext context) {
     );
   }
 
- Widget TitleShopText(
+Widget TitleShopText(
   BuildContext context, {
   required String ShopText,
   required String seeAll,
@@ -839,10 +836,10 @@ Widget NavBar(BuildContext context) {
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       Padding(
-        padding: EdgeInsets.only(top: 2),
+        padding: const EdgeInsets.only(top: 2),
         child: Text(
           ShopText,
-          style: TextStyle(
+          style: const TextStyle(
             color: Color(0XFF000000),
             fontSize: 16,
             fontFamily: 'High Tower Text',
@@ -854,7 +851,7 @@ Widget NavBar(BuildContext context) {
         onTap: onPressed, // กำหนดฟังก์ชันที่จะเรียกเมื่อปุ่มถูกกด
         child: Text(
           seeAll,
-          style: TextStyle(
+          style: const TextStyle(
             color: Color(0XFF963636),
             fontSize: 16,
             fontFamily: 'High Tower Text',
@@ -867,7 +864,7 @@ Widget NavBar(BuildContext context) {
 }
 
   // Common widget
-  Widget DealText(
+Widget DealText(
     BuildContext context, {
     required String price,
     required String price1,
@@ -882,7 +879,7 @@ Widget NavBar(BuildContext context) {
             price,
             maxLines: null,
             overflow: TextOverflow.ellipsis,
-            style: TextStyle(
+            style: const TextStyle(
               color: Color(0XFF000000),
               fontSize: 11,
               fontFamily: 'Ibarra Real Nova',
@@ -893,7 +890,7 @@ Widget NavBar(BuildContext context) {
         ),
         Text(
           price1,
-          style: TextStyle(
+          style: const TextStyle(
             color: Color(0XFF000000),
             fontSize: 11,
             fontFamily: 'Ibarra Real Nova',
