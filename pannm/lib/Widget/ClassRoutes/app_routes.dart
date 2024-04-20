@@ -3,6 +3,7 @@ import '../../Login/Login.dart';
 import '../../HomePage/HomePage.dart';
 import '../../sellpage/Topdealpage.dart';
 import '../../sellpage/Toppage.dart';
+import '../../SettingPage/Setting.dart';
 
 class AppRoutes {
   static const String cartPageScreen = '/cart_page_screen';
@@ -27,9 +28,10 @@ class AppRoutes {
     //cartPageScreen: (context) => CartPageScreen(),
     homePage: (context) => HomePageScreen(),
     //checkoutOneScreen: (context) => CheckoutOneScreen(),
-    login: (context) => const LoginPageScreen(),
+    login: (context) => LoginPageScreen(),
     //appNavigationScreen: (context) => AppNavigationScreen()
     topDeal: (context) => Topdealpage(),
     topSold:(context) => Toppage(),
+    setting:(context) => SettingsPage(),
   };
 }
