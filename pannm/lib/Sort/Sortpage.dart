@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pannm/HomePage/HomePage.dart';
 import '../navbar/NavBar.dart';
 void main() {
   runApp(Sort());
@@ -30,7 +31,15 @@ class SortState extends State<Sort> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          leading: Icon(Icons.close),
+          leading: IconButton(
+            icon: Icon(Icons.close),
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePageScreen()));
+    
+     },
+),
+
+          
         ),
         body: Padding(
           padding: const EdgeInsets.all(16.0),

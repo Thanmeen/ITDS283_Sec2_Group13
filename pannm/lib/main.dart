@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'Widget/ClassRoutes/app_routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+
 var globalMessengerKey = GlobalKey<ScaffoldMessengerState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

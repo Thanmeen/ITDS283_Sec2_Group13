@@ -1,3 +1,5 @@
+import 'package:pannm/Sort/Sortpage.dart';
+
 import '../navbar/NavBar.dart';
 import 'package:flutter/material.dart';
 import 'package:pannm/Sellpage/Topwomenpage.dart';
@@ -43,7 +45,9 @@ class _TopmenpageState extends State<Topmenpage> with SingleTickerProviderStateM
         leading: IconButton(
           icon: Icon(Icons.sort),
           color: Colors.white,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Sort() ));
+          },
         ),
         actions: [
           IconButton(
