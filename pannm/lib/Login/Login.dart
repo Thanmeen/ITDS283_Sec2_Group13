@@ -293,7 +293,7 @@ void onTapLogin(BuildContext context, TextEditingController usernameController, 
       const SnackBar(
         content: Text('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง'),
       ),
-    );
+    ); // เติมวงเล็บปิดที่ตกหล่นออกมา
   }
 }
 

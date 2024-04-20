@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           child: child!,
         );
       },
-      initialRoute: AppRoutes.profile,
+      initialRoute: AppRoutes.register,
       routes: AppRoutes.routes,
 
     );
