@@ -23,9 +23,11 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixConstraints,
     this.contentPadding,
     this.borderDecoration,
+    this.icon,
     this.fillColor,
     this.filled = true,
     this.validator, 
+    this.borderColor,
     this.keyboardType, // เพิ่ม keyboardType ที่นี่
   }) : super(
           key: key,
@@ -39,11 +41,13 @@ class CustomTextFormField extends StatelessWidget {
   final bool? autofocus;
   final TextStyle? textStyle;
   final bool? obscureText;
+  final IconData? icon;
   final TextInputAction? textInputAction;
   final TextInputType? textInputType;
   final int? maxLines;
   final String? hintText;
   final TextStyle? hintStyle;
+  final Color? borderColor;
   final Widget? prefix;
   final BoxConstraints? prefixConstraints;
   final Widget? suffix;
