@@ -55,7 +55,9 @@ class _TopwomenpageState extends State<Topwomenpage> with SingleTickerProviderSt
           IconButton(
             icon: Icon(Icons.shopping_cart),
             color: Colors.white,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed(AppRoutes.cart);
+            },
           ),
         ],
         bottom: TabBar(

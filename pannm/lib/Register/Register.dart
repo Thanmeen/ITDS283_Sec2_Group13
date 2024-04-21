@@ -75,6 +75,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     radius: 100,
                     backgroundImage:
                         _imagePath != null ? FileImage(File(_imagePath!)) : null,
+                        backgroundColor: Colors.white,
                   ),
                 ),
                 const SizedBox(height: 20),
@@ -132,6 +133,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     style: TextStyle(
                       color: const Color.fromARGB(141, 255, 255, 255),
                       fontSize: 16,
+                      fontFamily: 'Ibarra Real Nova',
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
