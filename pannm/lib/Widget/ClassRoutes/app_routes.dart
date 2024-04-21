@@ -1,4 +1,9 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:pannm/sellpage/Topmenpage.dart';
+import 'package:pannm/sellpage/Topwomenpage.dart';
+import 'package:pannm/sellpage/kidpage.dart';
 import '../../Cart/Cart.dart';
 import '../../Login/Login.dart';
 import '../../HomePage/HomePage.dart';
@@ -19,6 +24,9 @@ class AppRoutes {
   static const String editprofile = '/EditProfile';
   static const String cart = '/Cart';
   static const String register = '/Register';
+  static const String men = '/Topmenpage';
+  static const String Women = '/Topwomenpage';
+  static const String kid = '/kidpage';
 
   static Map<String, WidgetBuilder> routes = {
     homePage: (context) => HomePageScreen(),
@@ -30,6 +38,9 @@ class AppRoutes {
     editprofile:(context) => EditProfilePage(),
     cart:(context) => const MyCart(),
     register:(context) => RegisterPage(),
+    men:(context) => Topmenpage(),
+    Women:(context) => Topwomenpage(),
+    kid:(context) => kidpage(),
   };
 }
 

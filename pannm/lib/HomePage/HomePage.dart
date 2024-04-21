@@ -183,200 +183,224 @@ Widget Shop(BuildContext context) {
         children: [
           const SizedBox(width: 20),
           // อันที่ 1
-          SizedBox(
-            width: 142,
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 9,
-                  vertical: 10,
-                ),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 155, 88, 88),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: const Color.fromARGB(255, 0, 0, 0),
-                    width: 1,
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    CustomImageView(
-                      imagePath: ImageConstant.WomenShop,
-                      height: 46,
-                      width: 47,
-                      radius: BorderRadius.circular(23),
-                      margin: const EdgeInsets.only(bottom: 1),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(
-                        left: 8,
-                        top: 13,
-                        bottom: 14,
-                      ),
-                      child: Text(
-                        "TopSale",
-                        style: TextStyle(
-                          color: Color(0XFF000000),
-                          fontSize: 16,
-                          fontFamily: 'High Tower Text',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ],
+         SizedBox(
+  width: 142,
+  child: Align(
+    alignment: Alignment.centerRight,
+    child: GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushReplacementNamed(AppRoutes.topSold);
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 9,
+          vertical: 10,
+        ),
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 155, 88, 88),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: const Color.fromARGB(255, 0, 0, 0),
+            width: 1,
+          ),
+        ),
+        child: Row(
+          children: [
+            CustomImageView(
+              imagePath: ImageConstant.WomenShop,
+              height: 46,
+              width: 47,
+              radius: BorderRadius.circular(23),
+              margin: const EdgeInsets.only(bottom: 1),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 8,
+                top: 13,
+                bottom: 14,
+              ),
+              child: Text(
+                "TopSale",
+                style: TextStyle(
+                  color: Color(0XFF000000),
+                  fontSize: 16,
+                  fontFamily: 'High Tower Text',
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ),
-          ),
+          ],
+        ),
+      ),
+    ),
+  ),
+),
+
           const SizedBox(width: 20), // ระยะห่างระหว่าง Container
           // อันที่ 2
           SizedBox(
-            width: 142,
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 9,
-                  vertical: 10,
-                ),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 83, 83, 83),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: const Color.fromARGB(255, 0, 0, 0),
-                    width: 1,
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    CustomImageView(
-                      imagePath: ImageConstant.MenShop,
-                      height: 46,
-                      width: 47,
-                      radius: BorderRadius.circular(23),
-                      margin: const EdgeInsets.only(bottom: 1),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(
-                        left: 8,
-                        top: 13,
-                        bottom: 14,
-                      ),
-                      child: Text(
-                        "Men",
-                        style: TextStyle(
-                          color: Color(0XFF000000),
-                          fontSize: 16,
-                          fontFamily: 'High Tower Text',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ],
+  width: 142,
+  child: Align(
+    alignment: Alignment.centerRight,
+    child: GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushReplacementNamed(AppRoutes.men);
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 9,
+          vertical: 10,
+        ),
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 83, 83, 83),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: const Color.fromARGB(255, 0, 0, 0),
+            width: 1,
+          ),
+        ),
+        child: Row(
+          children: [
+            CustomImageView(
+              imagePath: ImageConstant.MenShop,
+              height: 46,
+              width: 47,
+              radius: BorderRadius.circular(23),
+              margin: const EdgeInsets.only(bottom: 1),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 8,
+                top: 13,
+                bottom: 14,
+              ),
+              child: Text(
+                "Men",
+                style: TextStyle(
+                  color: Color(0XFF000000),
+                  fontSize: 16,
+                  fontFamily: 'High Tower Text',
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ),
-          ),
+          ],
+        ),
+      ),
+    ),
+  ),
+),
+
           const SizedBox(width: 20), // ระยะห่างระหว่าง Container
           // อันที่ 3
           SizedBox(
-            width: 142,
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 9,
-                  vertical: 10,
-                ),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 255, 130, 130),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: const Color(0XFF000000),
-                    width: 1,
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    CustomImageView(
-                      imagePath: ImageConstant.WomenShop,
-                      height: 46,
-                      width: 47,
-                      radius: BorderRadius.circular(23),
-                      margin: const EdgeInsets.only(bottom: 1),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(
-                        left: 8,
-                        top: 13,
-                        bottom: 14,
-                      ),
-                      child: Text(
-                        "Women",
-                        style: TextStyle(
-                          color: Color(0XFF000000),
-                          fontSize: 16,
-                          fontFamily: 'High Tower Text',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ],
+  width: 142,
+  child: Align(
+    alignment: Alignment.centerRight,
+    child: GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushReplacementNamed(AppRoutes.Women);
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 9,
+          vertical: 10,
+        ),
+        decoration: BoxDecoration(
+          color: const Color.fromARGB(255, 255, 130, 130),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: const Color(0XFF000000),
+            width: 1,
+          ),
+        ),
+        child: Row(
+          children: [
+            CustomImageView(
+              imagePath: ImageConstant.WomenShop,
+              height: 46,
+              width: 47,
+              radius: BorderRadius.circular(23),
+              margin: const EdgeInsets.only(bottom: 1),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 8,
+                top: 13,
+                bottom: 14,
+              ),
+              child: Text(
+                "Women",
+                style: TextStyle(
+                  color: Color(0XFF000000),
+                  fontSize: 16,
+                  fontFamily: 'High Tower Text',
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ),
-          ),
+          ],
+        ),
+      ),
+    ),
+  ),
+),
+
           const SizedBox(width: 20), // ระยะห่างระหว่าง Container
           // อันที่ 4
-          SizedBox(
-            width: 142,
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 9,
-                  vertical: 10,
-                ),
-                decoration: BoxDecoration(
-                  color: const Color(0XFF8C8989),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(
-                    color: const Color(0XFF000000),
-                    width: 1,
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    CustomImageView(
-                      imagePath: ImageConstant.MenShop,
-                      height: 46,
-                      width: 47,
-                      radius: BorderRadius.circular(23),
-                      margin: const EdgeInsets.only(bottom: 1),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(
-                        left: 8,
-                        top: 13,
-                        bottom: 14,
-                      ),
-                      child: Text(
-                        "Kids",
-                        style: TextStyle(
-                          color: Color(0XFF000000),
-                          fontSize: 16,
-                          fontFamily: 'High Tower Text',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ],
+         SizedBox(
+  width: 142,
+  child: Align(
+    alignment: Alignment.centerRight,
+    child: GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushReplacementNamed(AppRoutes.kid);
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 9,
+          vertical: 10,
+        ),
+        decoration: BoxDecoration(
+          color: const Color(0XFF8C8989),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: const Color(0XFF000000),
+            width: 1,
+          ),
+        ),
+        child: Row(
+          children: [
+            CustomImageView(
+              imagePath: ImageConstant.MenShop,
+              height: 46,
+              width: 47,
+              radius: BorderRadius.circular(23),
+              margin: const EdgeInsets.only(bottom: 1),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 8,
+                top: 13,
+                bottom: 14,
+              ),
+              child: Text(
+                "Kids",
+                style: TextStyle(
+                  color: Color(0XFF000000),
+                  fontSize: 16,
+                  fontFamily: 'High Tower Text',
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ),
-          ),
+          ],
+        ),
+      ),
+    ),
+  ),
+),
+
           const SizedBox(width: 20),
         ],
       ),

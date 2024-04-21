@@ -114,18 +114,25 @@ Future<void> _getImage(ImageSource source) async {
                 CustomTextFormField(
                   controller: _usernameController,
                   hintText: 'Username',
+                  icon: Icons.person,
+                  borderColor: Colors.black,
+                  
                 ),
                 const SizedBox(height: 10),
                 CustomTextFormField(
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Email',
+                  icon: Icons.email,
+                  borderColor: Colors.black,
                 ),
                 const SizedBox(height: 10),
                 CustomTextFormField(
                   controller: _passwordController,
                   obscureText: true,
                   hintText: 'Password',
+                  icon: Icons.lock,
+                  borderColor: Colors.black,
                 ),
                 const SizedBox(height: 50),
                 Padding(
