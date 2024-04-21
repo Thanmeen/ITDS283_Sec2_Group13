@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pannm/HomePage/HomePage.dart';
 import '../widget/ClassImage/image_constant.dart';
 import '../widget/ClassImage/Image_view.dart';
 import '../Widget/ClassRoutes/app_routes.dart';
-import '../SettingPage/Setting.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 
 // ignore: must_be_immutable
@@ -16,6 +16,7 @@ class CustomBottomBar extends StatefulWidget {
   @override
   CustomBottomBarState createState() => CustomBottomBarState();
 }
+
 
 class CustomBottomBarState extends State<CustomBottomBar> {
   int selectedIndex = 0;
@@ -53,6 +54,15 @@ class CustomBottomBarState extends State<CustomBottomBar> {
     )
   ];
 
+  void openWebsite() async {
+    const url = 'https://sites.google.com/student.mahidol.edu/pannm/%E0%B8%95%E0%B8%94%E0%B8%95%E0%B8%AD%E0%B9%80%E0%B8%A3%E0%B8%B2';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   void onChanged(BottomBarEnum selectedBar) {
   switch (selectedBar) {
     case BottomBarEnum.Home:
@@ -65,10 +75,10 @@ class CustomBottomBarState extends State<CustomBottomBar> {
       Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
       break;
     case BottomBarEnum.Contractus:
-      Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+      openWebsite();
       break;
     case BottomBarEnum.Profile:
-      Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+      Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
       break;
   }
 }

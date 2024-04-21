@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../Widget/ClassRoutes/app_routes.dart';
 import 'checkout.dart'; // import checkout.dart ที่เราสร้างไว้
 
 class MyCart extends StatelessWidget {
@@ -53,29 +54,36 @@ class _MyCartState extends State<_MyCart> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.attach_money),
+            icon: Icon(Icons.attach_money),
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Row(
                     children: [
-                      Image.asset('assets/images/PannmLogo.PNG', width: 24, height: 24), // รูปภาพ
-                      const SizedBox(width: 8), // ระยะห่างระหว่างภาพและข้อความ
+                      Image.asset('assets/images/PannmLogo.PNG', width: 24, height: 24),
+                      SizedBox(width: 8),
                       Expanded(
                         child: Text(
                           _totalPrice >= 300 ? 'You Just got free standard shipping.' : 'You are ${300 - _totalPrice} bath away from free standard shipping',
                           textAlign: TextAlign.center,
-                          style: const TextStyle(color: Colors.white), // Set text color to white
+                          style: TextStyle(color: Colors.white),
                         ),
                       ),
                     ],
                   ),
-                  behavior: SnackBarBehavior.floating, // กำหนด SnackBar ให้แสดงด้านบนของหน้าจอ
+                  behavior: SnackBarBehavior.floating,
                 ),
               );
             },
           ),
+          IconButton(
+            icon: Icon(Icons.close), // ใช้ไอคอน close
+            onPressed: () {
+              Navigator.of(context).pushReplacementNamed(AppRoutes.homePage); // เมื่อกดปุ่มให้ปิดหน้าจอนี้
+            },
+          ),
         ],
+
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(2), // กำหนดความสูงของเส้น
           child: Divider(

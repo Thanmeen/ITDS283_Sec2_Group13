@@ -61,4 +61,6 @@ class ImageConstant {
   static String img39816ab501a04 = '$imagePath/img_39816ab5_01a0_4.png';
 
   static String imageNotFound = 'assets/images/image_not_found.png';
+
+  static String imgMultiply = '$imagePath/img_multiply.png';
 }

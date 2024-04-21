@@ -1,14 +1,17 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:pannm/Sort/Sortpage.dart';
+import 'updatecart_page_dialog.dart';
 import 'widgets/ShirtImage.dart';
 import 'package:flutter/material.dart';
 import '../Widget/ClassImage/image_view.dart';
 import '../Widget/ClassImage/image_constant.dart';
 import '../navbar/NavBar.dart';
 import '../Widget/ClassRoutes/app_routes.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // ignore_for_file: must_be_immutable
 class HomePageScreen extends StatelessWidget {
+
   HomePageScreen({super.key});
 
   TextEditingController searchController = TextEditingController();
@@ -477,7 +480,13 @@ Widget Shop(BuildContext context) {
                               right: 10), // เพิ่ม Padding เพื่อขยับไปทางซ้าย
                           child: TextButton(
                             onPressed: () {
-                              // กระทำที่ต้องการเมื่อกดปุ่ม
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  // Return the instance of your custom dialog class
+                                  return UpdatecartPageDialog();
+                                },
+                              );
                             },
                             child: const Text(
                               '+',
@@ -895,7 +904,8 @@ Widget DealText(
       ],
     );
   }
-  
+
+
   // Section for NavBar
   Widget NavBar(BuildContext context) {
   return CustomBottomBar(
@@ -911,10 +921,10 @@ Widget DealText(
           Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
           break;
         case BottomBarEnum.Contractus:
-          Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+          _launchUrl();
          break;
         case BottomBarEnum.Profile:
-         Navigator.of(context).pushReplacementNamed(AppRoutes.homePage);
+         Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
         break;
          default:
           break;
@@ -922,4 +932,11 @@ Widget DealText(
     },
   );
   }
+  final Uri _url = Uri.parse('https://sites.google.com/student.mahidol.edu/pannm/%E0%B8%95%E0%B8%94%E0%B8%95%E0%B8%AD%E0%B9%80%E0%B8%A3%E0%B8%B2');
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
+}
 }
