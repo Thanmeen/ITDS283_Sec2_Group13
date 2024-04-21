@@ -94,7 +94,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   obscureText: true,
                   hintText: 'Password',
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 50),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: SizedBox(
@@ -109,7 +109,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
-                      ),
+                      ),           
                       child: const Text(
                         'Register',
                         style: TextStyle(
@@ -122,15 +122,15 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+             
                 TextButton(
                   onPressed: () {
                     Navigator.of(context).pushReplacementNamed(AppRoutes.login);
                   },
                   child: Text(
-                    'Login',
+                    ' or Login',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: const Color.fromARGB(141, 255, 255, 255),
                       fontSize: 16,
                     ),
                   ),
