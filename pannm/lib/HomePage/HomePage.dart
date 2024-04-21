@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:pannm/Sort/Sortpage.dart';
+import '../Sellpage/Topmenpage.dart';
 import 'updatecart_page_dialog.dart';
 import 'widgets/ShirtImage.dart';
 import 'package:flutter/material.dart';
@@ -244,7 +245,7 @@ Widget Shop(BuildContext context) {
     alignment: Alignment.centerRight,
     child: GestureDetector(
       onTap: () {
-        Navigator.of(context).pushReplacementNamed(AppRoutes.men);
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Topmenpage() ));
       },
       child: Container(
         padding: const EdgeInsets.symmetric(

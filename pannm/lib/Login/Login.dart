@@ -160,7 +160,7 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                           const Spacer(), // ส่วนเพิ่มขยายทั้งหมดที่เหลือของพื้นที่ว่าง
                           GestureDetector(
                             onTap: () {
-                              // สำหรับลืมรหัสผ่าน
+                              Navigator.of(context).pushReplacementNamed(AppRoutes.register);
                             },
                             child: const Text(
                               "Forget password",
