@@ -45,16 +45,47 @@ class _RegisterPageState extends State<RegisterPage> {
 
   // เมื่อคลิกที่ภาพโลโก้
   Future<void> _pickImage() async {
-    final picker = ImagePicker();
-    final pickedFile = await picker.pickImage(
-        source: ImageSource.gallery); // เลือกภาพจากแกลอรี
+  await showModalBottomSheet(
+    context: context,
+    builder: (BuildContext context) {
+      return SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            ListTile(
+              leading: Icon(Icons.photo_library),
+              title: Text('Choose from Gallery'),
+              onTap: () {
+                Navigator.pop(context);
+                _getImage(ImageSource.gallery);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.camera_alt),
+              title: Text('Take a Picture'),
+              onTap: () {
+                Navigator.pop(context);
+                _getImage(ImageSource.camera);
+              },
+            ),
+          ],
+        ),
+      );
+    },
+  );
+}
 
-    if (pickedFile != null) {
-      setState(() {
-        _imagePath = pickedFile.path; // กำหนดที่อยู่ของภาพที่เลือก
-      });
-    }
+// เลือกภาพจากแกลอรีหรือถ่ายภาพโดยตรงจากกล้อง
+Future<void> _getImage(ImageSource source) async {
+  final picker = ImagePicker();
+  final pickedFile = await picker.pickImage(source: source);
+
+  if (pickedFile != null) {
+    setState(() {
+      _imagePath = pickedFile.path; // กำหนดที่อยู่ของภาพที่ถ่ายหรือเลือก
+    });
   }
+}
 
   @override
   Widget build(BuildContext context) {

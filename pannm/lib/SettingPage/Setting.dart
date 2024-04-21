@@ -63,7 +63,7 @@ class _SettingsPageState extends State<SettingsPage> {
             title: Text('Log out'),
             leading: Icon(Icons.exit_to_app),
             onTap: () {
-              Navigator.of(context).pushReplacementNamed(AppRoutes.profile);
+              Navigator.of(context).pushReplacementNamed(AppRoutes.register);
             },
           ),
         ],
